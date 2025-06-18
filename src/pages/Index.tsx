@@ -234,35 +234,100 @@ const Index = () => {
               </motion.div>
             </motion.div>
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative order-first lg:order-last"
+              initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
+              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 text-white">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/20 rounded-lg p-4 backdrop-blur-sm">
-                    <Users className="h-8 w-8 mb-2" />
-                    <div className="text-2xl font-bold">10,000+</div>
-                    <div className="text-sm opacity-90">Élèves actifs</div>
-                  </div>
-                  <div className="bg-white/20 rounded-lg p-4 backdrop-blur-sm">
-                    <BookOpen className="h-8 w-8 mb-2" />
-                    <div className="text-2xl font-bold">500+</div>
-                    <div className="text-sm opacity-90">Cours disponibles</div>
-                  </div>
-                  <div className="bg-white/20 rounded-lg p-4 backdrop-blur-sm">
-                    <GraduationCap className="h-8 w-8 mb-2" />
-                    <div className="text-2xl font-bold">150+</div>
-                    <div className="text-sm opacity-90">Écoles partenaires</div>
-                  </div>
-                  <div className="bg-white/20 rounded-lg p-4 backdrop-blur-sm">
-                    <Heart className="h-8 w-8 mb-2" />
-                    <div className="text-2xl font-bold">98%</div>
-                    <div className="text-sm opacity-90">Satisfaction</div>
-                  </div>
+              <motion.div
+                className="bg-gradient-to-br from-primary via-blue-600 to-accent rounded-2xl p-6 sm:p-8 text-white shadow-2xl"
+                whileHover={{ scale: 1.02, rotateY: -2 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {[
+                    {
+                      icon: Users,
+                      number: "10,000+",
+                      label: "Élèves actifs",
+                      delay: 0.1,
+                    },
+                    {
+                      icon: BookOpen,
+                      number: "500+",
+                      label: "Cours disponibles",
+                      delay: 0.2,
+                    },
+                    {
+                      icon: GraduationCap,
+                      number: "150+",
+                      label: "Écoles partenaires",
+                      delay: 0.3,
+                    },
+                    {
+                      icon: Heart,
+                      number: "98%",
+                      label: "Satisfaction",
+                      delay: 0.4,
+                    },
+                  ].map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      className="bg-white/20 rounded-xl p-3 sm:p-4 backdrop-blur-sm border border-white/10"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6 + stat.delay }}
+                      whileHover={{
+                        scale: 1.05,
+                        backgroundColor: "rgba(255, 255, 255, 0.3)",
+                        transition: { duration: 0.2 },
+                      }}
+                    >
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.4, delay: 0.8 + stat.delay }}
+                      >
+                        <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 mb-2" />
+                      </motion.div>
+                      <motion.div
+                        className="text-xl sm:text-2xl font-bold"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 1 + stat.delay }}
+                      >
+                        {stat.number}
+                      </motion.div>
+                      <motion.div
+                        className="text-xs sm:text-sm opacity-90"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 1.1 + stat.delay }}
+                      >
+                        {stat.label}
+                      </motion.div>
+                    </motion.div>
+                  ))}
                 </div>
-              </div>
+
+                {/* Effet de particules flottantes */}
+                <motion.div
+                  className="absolute top-4 right-4 w-2 h-2 bg-white/40 rounded-full"
+                  animate={{
+                    y: [0, -10, 0],
+                    opacity: [0.4, 0.8, 0.4],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                />
+                <motion.div
+                  className="absolute bottom-6 left-6 w-1 h-1 bg-white/30 rounded-full"
+                  animate={{
+                    y: [0, -15, 0],
+                    opacity: [0.3, 0.7, 0.3],
+                  }}
+                  transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+                />
+              </motion.div>
             </motion.div>
           </div>
         </div>
