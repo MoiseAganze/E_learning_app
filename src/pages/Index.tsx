@@ -361,24 +361,14 @@ const Index = () => {
             votre établissement.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/dashboard">
-                <Button
-                  size="lg"
-                  className="bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all"
-                >
-                  Accéder aux dashboards
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link to="/connexion">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary/10"
-                >
-                  Se connecter
-                </Button>
-              </Link>
+            <Link to="/dashboard">
+              <Button
+                size="lg"
+                className="bg-white text-primary hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all"
+              >
+                Accéder aux dashboards
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
             </Link>
             <Button
               size="lg"
