@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import { authService } from "@/services/authService";
 import {
@@ -81,68 +82,182 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">EA</span>
-            </div>
-          </div>
-          <h1 className="text-3xl font-bold text-gray-900">EduAfrique</h1>
-          <p className="text-gray-600 mt-2">Connectez-vous à votre espace</p>
-          <Badge className="mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-            🌍 Éducation pour l'Afrique francophone
-          </Badge>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Éléments décoratifs animés */}
+      <motion.div
+        className="absolute top-20 left-10 w-20 h-20 bg-blue-200/30 rounded-full"
+        animate={{
+          y: [0, -20, 0],
+          rotate: [0, 180, 360]
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+      <motion.div
+        className="absolute bottom-20 right-10 w-16 h-16 bg-purple-200/30 rounded-full"
+        animate={{
+          y: [0, 20, 0],
+          rotate: [0, -180, -360]
+        }}
+        transition={{ duration: 6, repeat: Infinity, delay: 1 }}
+      />
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Connexion</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Label htmlFor="email">Email</Label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="votre@email.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="pl-10"
-                    required
-                  />
-                </div>
-              </div>
-              <div>
-                <Label htmlFor="password">Mot de passe</Label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                  <Input
-                    id="password"
-                    type="password"
-                    placeholder="••••••••"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="pl-10"
-                    required
-                  />
-                </div>
-              </div>
-              <Button type="submit" disabled={loading} className="w-full">
-                {loading ? (
-                  <>
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    Connexion...
-                  </>
-                ) : (
-                  "Se connecter"
-                )}
-              </Button>
-            </form>
+      <motion.div
+        className="w-full max-w-md relative z-10"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <motion.div
+          className="text-center mb-8"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.div
+            className="flex items-center justify-center mb-4"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <motion.div
+              className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
+              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.span
+                className="text-white font-bold text-2xl"
+                animate={{ rotateY: [0, 360] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              >
+                EA
+              </motion.span>
+            </motion.div>
+          </motion.div>
+          <motion.h1
+            className="text-3xl font-bold text-gray-900"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            EduAfrique
+          </motion.h1>
+          <motion.p
+            className="text-gray-600 mt-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            Connectez-vous à votre espace
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <Badge className="mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+              <motion.span
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}
+                className="inline-block mr-2"
+              >
+                🌍
+              </motion.span>
+              Éducation pour l'Afrique francophone
+            </Badge>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Card className="shadow-xl border-0 backdrop-blur-sm bg-white/95">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <CardHeader>
+                <CardTitle className="text-center">Connexion</CardTitle>
+              </CardHeader>
+            </motion.div>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
+                  <Label htmlFor="email">Email</Label>
+                  <div className="relative">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 0.3, delay: 0.8 }}
+                    >
+                      <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    </motion.div>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="votre@email.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="pl-10 transition-all duration-300 focus:scale-105"
+                      required
+                    />
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  <Label htmlFor="password">Mot de passe</Label>
+                  <div className="relative">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 0.3, delay: 0.9 }}
+                    >
+                      <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    </motion.div>
+                    <Input
+                      id="password"
+                      type="password"
+                      placeholder="••••••••"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="pl-10 transition-all duration-300 focus:scale-105"
+                      required
+                    />
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1 }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Button type="submit" disabled={loading} className="w-full">
+                      {loading ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                          Connexion...
+                        </>
+                      ) : (
+                        "Se connecter"
+                      )}
+                    </Button>
+                  </motion.div>
+                </motion.div>
+              </form>
 
             <Separator className="my-6" />
 
