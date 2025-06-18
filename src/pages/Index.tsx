@@ -442,43 +442,71 @@ const Index = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="grid grid-cols-2 gap-4">
-                <Card className="bg-gradient-to-br from-blue-500 to-blue-600 text-white">
-                  <CardContent className="p-6">
-                    <MessageCircle className="h-8 w-8 mb-4" />
-                    <h3 className="font-semibold mb-2">Communication</h3>
-                    <p className="text-sm opacity-90">
-                      Messagerie intégrée pour tous les acteurs
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="bg-gradient-to-br from-green-500 to-green-600 text-white mt-8">
-                  <CardContent className="p-6">
-                    <FileText className="h-8 w-8 mb-4" />
-                    <h3 className="font-semibold mb-2">Contenus</h3>
-                    <p className="text-sm opacity-90">
-                      Bibliothèque de ressources éducatives
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="bg-gradient-to-br from-purple-500 to-purple-600 text-white -mt-4">
-                  <CardContent className="p-6">
-                    <Calendar className="h-8 w-8 mb-4" />
-                    <h3 className="font-semibold mb-2">Planning</h3>
-                    <p className="text-sm opacity-90">
-                      Gestion intelligente des emplois du temps
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="bg-gradient-to-br from-orange-500 to-orange-600 text-white mt-4">
-                  <CardContent className="p-6">
-                    <Brain className="h-8 w-8 mb-4" />
-                    <h3 className="font-semibold mb-2">IA éducative</h3>
-                    <p className="text-sm opacity-90">
-                      Assistant intelligent pour l'apprentissage
-                    </p>
-                  </CardContent>
-                </Card>
+              <div className="grid grid-cols-2 gap-4 items-stretch">
+                {[
+                  {
+                    icon: MessageCircle,
+                    title: "Communication",
+                    description: "Messagerie intégrée pour tous les acteurs",
+                    gradient: "from-blue-500 to-blue-600",
+                    delay: 0.1,
+                  },
+                  {
+                    icon: FileText,
+                    title: "Contenus",
+                    description: "Bibliothèque de ressources éducatives",
+                    gradient: "from-green-500 to-green-600",
+                    delay: 0.2,
+                  },
+                  {
+                    icon: Calendar,
+                    title: "Planning",
+                    description: "Gestion intelligente des emplois du temps",
+                    gradient: "from-purple-500 to-purple-600",
+                    delay: 0.3,
+                  },
+                  {
+                    icon: Brain,
+                    title: "IA éducative",
+                    description: "Assistant intelligent pour l'apprentissage",
+                    gradient: "from-orange-500 to-orange-600",
+                    delay: 0.4,
+                  },
+                ].map((feature, index) => (
+                  <motion.div
+                    key={feature.title}
+                    initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.5, delay: feature.delay }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="h-full"
+                  >
+                    <Card
+                      className={`bg-gradient-to-br ${feature.gradient} text-white h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300`}
+                    >
+                      <CardContent className="p-4 sm:p-6 flex flex-col h-full">
+                        <motion.div
+                          initial={{ scale: 0, rotate: -180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          transition={{
+                            duration: 0.6,
+                            delay: feature.delay + 0.2,
+                          }}
+                          viewport={{ once: true }}
+                        >
+                          <feature.icon className="h-6 w-6 sm:h-8 sm:w-8 mb-3 sm:mb-4" />
+                        </motion.div>
+                        <h3 className="font-semibold mb-2 text-sm sm:text-base">
+                          {feature.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm opacity-90 flex-1">
+                          {feature.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
