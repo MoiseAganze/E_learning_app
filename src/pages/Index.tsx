@@ -88,13 +88,6 @@ const Index = () => {
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  Voir la démo
-                </Button>
               </div>
               <div className="flex items-center gap-6 mt-8 text-sm text-gray-500">
                 <div className="flex items-center gap-2">
@@ -373,7 +366,7 @@ const Index = () => {
             <Button
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary"
+              className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 hover:border-white"
             >
               Contactez-nous
             </Button>
