@@ -29,86 +29,209 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
+      <motion.nav
+        className="bg-white/90 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50"
+        initial={{ y: -80 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <motion.div
               className="flex items-center space-x-2"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ scale: 1.05 }}
             >
-              <GraduationCap className="h-8 w-8 text-primary" />
+              <motion.div
+                animate={{ rotate: [0, 5, -5, 0] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              >
+                <GraduationCap className="h-8 w-8 text-primary" />
+              </motion.div>
               <span className="text-xl font-bold text-gray-900">
                 EduAfrique
               </span>
             </motion.div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="#fonctionnalites"
-                className="text-gray-600 hover:text-primary transition-colors"
+
+            {/* Menu mobile amélioré */}
+            <div className="md:hidden">
+              <motion.button
+                className="p-2 rounded-md text-gray-600 hover:text-primary"
+                whileTap={{ scale: 0.95 }}
               >
-                Fonctionnalités
-              </a>
-              <a
-                href="#apropos"
-                className="text-gray-600 hover:text-primary transition-colors"
-              >
-                À propos
-              </a>
-              <a
-                href="#contact"
-                className="text-gray-600 hover:text-primary transition-colors"
-              >
-                Contact
-              </a>
-              <Link to="/connexion">
-                <Button>Se connecter</Button>
-              </Link>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </motion.button>
             </div>
+
+            <motion.div
+              className="hidden md:flex items-center space-x-8"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              {[
+                { href: "#fonctionnalites", text: "Fonctionnalités" },
+                { href: "#apropos", text: "À propos" },
+                { href: "#contact", text: "Contact" },
+              ].map((link, index) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  className="text-gray-600 hover:text-primary transition-colors relative"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                  whileHover={{ y: -2 }}
+                >
+                  {link.text}
+                </motion.a>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.7 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link to="/connexion">
+                  <Button>Se connecter</Button>
+                </Link>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-32 px-4 sm:px-6 lg:px-8">
+      <section className="pt-12 sm:pt-20 pb-20 sm:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-center lg:text-left"
             >
-              <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
-                🌍 Éducation pour l'Afrique francophone
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                Transformons l'éducation en
-                <span className="text-primary"> Afrique</span>
-              </h1>
-              <p className="text-xl text-gray-600 mt-6 leading-relaxed">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Badge className="mb-6 bg-primary/10 text-primary hover:bg-primary/20 inline-block">
+                  <motion.span
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatDelay: 4,
+                    }}
+                    className="inline-block mr-2"
+                  >
+                    🌍
+                  </motion.span>
+                  Éducation pour l'Afrique francophone
+                </Badge>
+              </motion.div>
+
+              <motion.h1
+                className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  Transformons l'éducation en
+                </motion.span>
+                <motion.span
+                  className="text-primary block lg:inline"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                >
+                  {" "}
+                  Afrique
+                </motion.span>
+              </motion.h1>
+
+              <motion.p
+                className="text-lg sm:text-xl text-gray-600 mt-6 leading-relaxed max-w-lg mx-auto lg:mx-0"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
                 Une plateforme e-learning complète, intelligente et accessible
                 qui révolutionne l'apprentissage pour les établissements,
                 enseignants, élèves et parents.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Link to="/connexion">
-                  <Button size="lg" className="w-full sm:w-auto">
-                    Commencer maintenant
-                    <ChevronRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-              <div className="flex items-center gap-6 mt-8 text-sm text-gray-500">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  <span>Gratuit pour démarrer</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-500" />
-                  <span>Support 24/7</span>
-                </div>
-              </div>
+              </motion.p>
+
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link to="/connexion">
+                    <Button
+                      size="lg"
+                      className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-shadow"
+                    >
+                      Commencer maintenant
+                      <motion.div
+                        className="ml-2"
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                      </motion.div>
+                    </Button>
+                  </Link>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                className="flex items-center gap-6 mt-8 text-sm text-gray-500 justify-center lg:justify-start flex-wrap"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1 }}
+              >
+                {[
+                  { icon: CheckCircle, text: "Gratuit pour démarrer" },
+                  { icon: CheckCircle, text: "Support 24/7" },
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.text}
+                    className="flex items-center gap-2"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 1.1 + index * 0.1 }}
+                  >
+                    <item.icon className="h-4 w-4 text-green-500" />
+                    <span>{item.text}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
             </motion.div>
             <motion.div
               className="relative"
