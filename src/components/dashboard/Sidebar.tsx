@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface SidebarProps {
   userType: "ecole" | "enseignant" | "eleve" | "parent";
@@ -155,6 +156,12 @@ const menuItems = {
 
 export function Sidebar({ userType }: SidebarProps) {
   const items = menuItems[userType];
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (href: string) => {
+    navigate(href);
+  };
 
   return (
     <aside className="w-64 bg-white border-r border-gray-200 min-h-screen">
@@ -163,9 +170,11 @@ export function Sidebar({ userType }: SidebarProps) {
           <Button
             key={index}
             variant="ghost"
+            onClick={() => handleNavigation(item.href)}
             className={cn(
               "w-full justify-start text-left font-normal",
-              index === 0 && "bg-blue-50 text-blue-700 hover:bg-blue-100",
+              location.pathname === item.href &&
+                "bg-blue-50 text-blue-700 hover:bg-blue-100",
             )}
           >
             <item.icon className="w-4 h-4 mr-3" />
