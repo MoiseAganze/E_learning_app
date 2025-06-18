@@ -6,13 +6,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
-import DashboardSelector from "./pages/DashboardSelector";
+import RegisterAdmin from "./pages/RegisterAdmin";
 import {
   EcoleDashboard,
   EnseignantDashboard,
   EleveDashboard,
   ParentDashboard,
 } from "./pages/dashboard";
+import GestionUtilisateurs from "./pages/dashboard/ecole/GestionUtilisateurs";
+import Abonnements from "./pages/dashboard/ecole/Abonnements";
+import Resultats from "./pages/dashboard/ecole/Resultats";
 
 const queryClient = new QueryClient();
 
@@ -25,12 +28,20 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/connexion" element={<Login />} />
-
-          {/* Route de sélection de dashboard */}
-          <Route path="/dashboard" element={<DashboardSelector />} />
+          <Route path="/inscription-admin" element={<RegisterAdmin />} />
 
           {/* Routes Dashboard */}
           <Route path="/dashboard/ecole" element={<EcoleDashboard />} />
+          <Route
+            path="/dashboard/ecole/utilisateurs"
+            element={<GestionUtilisateurs />}
+          />
+          <Route
+            path="/dashboard/ecole/abonnements"
+            element={<Abonnements />}
+          />
+          <Route path="/dashboard/ecole/resultats" element={<Resultats />} />
+
           <Route
             path="/dashboard/enseignant"
             element={<EnseignantDashboard />}
