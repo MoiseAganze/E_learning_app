@@ -445,6 +445,12 @@ const Index = () => {
             <p>&copy; 2024 EduAfrique. Tous droits réservés. Fait avec ❤️ pour l'Afrique.</p>
           </div>
         </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
