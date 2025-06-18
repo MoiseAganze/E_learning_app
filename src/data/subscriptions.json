@@ -1,0 +1,100 @@
+{
+  "plans": [
+    {
+      "id": "basic",
+      "name": "Basique",
+      "price": 50000,
+      "currency": "XOF",
+      "billing": "monthly",
+      "maxStudents": 100,
+      "maxTeachers": 10,
+      "features": [
+        "Gestion des notes",
+        "Emploi du temps",
+        "Communication de base",
+        "Rapports simples"
+      ],
+      "limitations": [
+        "Support par email uniquement",
+        "Stockage 1GB",
+        "Pas de modules avancés"
+      ]
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "price": 100000,
+      "currency": "XOF",
+      "billing": "monthly",
+      "maxStudents": 500,
+      "maxTeachers": 50,
+      "features": [
+        "Tout du plan Basique",
+        "Modules d'apprentissage",
+        "Bulletins automatisés",
+        "Analyses détaillées",
+        "Support téléphonique"
+      ],
+      "limitations": ["Stockage 10GB", "Intégrations limitées"]
+    },
+    {
+      "id": "premium",
+      "name": "Premium",
+      "price": 200000,
+      "currency": "XOF",
+      "billing": "monthly",
+      "maxStudents": 2000,
+      "maxTeachers": 200,
+      "features": [
+        "Tout du plan Standard",
+        "Visioconférences intégrées",
+        "API complète",
+        "Formations personnalisées",
+        "Support prioritaire 24/7",
+        "Stockage illimité",
+        "Intégrations avancées"
+      ],
+      "limitations": []
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "sub_001",
+      "schoolId": "school_001",
+      "planId": "premium",
+      "status": "active",
+      "startDate": "2024-01-01T00:00:00Z",
+      "endDate": "2024-12-31T23:59:59Z",
+      "autoRenew": true,
+      "paymentMethod": "bank_transfer",
+      "lastPaymentDate": "2024-01-01T00:00:00Z",
+      "nextPaymentDate": "2024-04-01T00:00:00Z",
+      "totalAmount": 2400000,
+      "paidAmount": 600000,
+      "remainingAmount": 1800000
+    }
+  ],
+  "invoices": [
+    {
+      "id": "inv_001",
+      "subscriptionId": "sub_001",
+      "schoolId": "school_001",
+      "amount": 600000,
+      "status": "paid",
+      "dueDate": "2024-01-31T23:59:59Z",
+      "paidDate": "2024-01-15T10:30:00Z",
+      "period": "2024-01-01 to 2024-03-31",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": "inv_002",
+      "subscriptionId": "sub_001",
+      "schoolId": "school_001",
+      "amount": 600000,
+      "status": "pending",
+      "dueDate": "2024-04-30T23:59:59Z",
+      "period": "2024-04-01 to 2024-06-30",
+      "createdAt": "2024-04-01T00:00:00Z"
+    }
+  ]
+}
