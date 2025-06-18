@@ -670,8 +670,8 @@ const Index = () => {
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-gray-400">
                 <p>📧 contact@eduafrique.com</p>
-                <p>📞 +225 27 20 12 34 56</p>
-                <p>📍 Abidjan, Côte d'Ivoire</p>
+                <p>📞 +243 99 23 35 768</p>
+                <p>📍 Kinshasa, RDC</p>
               </div>
             </div>
           </div>
