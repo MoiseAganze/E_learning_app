@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": "admin_001",
+      "email": "admin@ecolelumiere.edu",
+      "password": "admin123",
+      "type": "ecole",
+      "firstName": "Direction",
+      "lastName": "École Lumière",
+      "phone": "+225 07 12 34 56 78",
+      "schoolId": "school_001",
+      "createdAt": "2024-01-15T08:00:00Z"
+    },
+    {
+      "id": "teacher_001",
+      "email": "marie.diallo@ecolelumiere.edu",
+      "password": "teacher123",
+      "type": "enseignant",
+      "firstName": "Marie",
+      "lastName": "Diallo",
+      "phone": "+225 05 98 76 54 32",
+      "schoolId": "school_001",
+      "subjects": ["mathematics"],
+      "classes": ["6eme_a", "5eme_b", "4eme_c"],
+      "createdAt": "2024-01-20T09:00:00Z"
+    },
+    {
+      "id": "teacher_002",
+      "email": "kofi.ouattara@ecolelumiere.edu",
+      "password": "teacher123",
+      "type": "enseignant",
+      "firstName": "Kofi",
+      "lastName": "Ouattara",
+      "phone": "+225 01 45 67 89 01",
+      "schoolId": "school_001",
+      "subjects": ["history", "geography"],
+      "classes": ["3eme_b"],
+      "createdAt": "2024-01-22T10:00:00Z"
+    },
+    {
+      "id": "student_001",
+      "email": "aya.traore@student.ecolelumiere.edu",
+      "password": "student123",
+      "type": "eleve",
+      "firstName": "Aya",
+      "lastName": "Traoré",
+      "phone": "+225 07 23 45 67 89",
+      "schoolId": "school_001",
+      "classId": "6eme_a",
+      "parentIds": ["parent_001"],
+      "dateOfBirth": "2010-03-15",
+      "createdAt": "2024-02-01T08:00:00Z"
+    },
+    {
+      "id": "student_002",
+      "email": "kofi.traore@student.ecolelumiere.edu",
+      "password": "student123",
+      "type": "eleve",
+      "firstName": "Kofi",
+      "lastName": "Traoré",
+      "phone": "+225 05 34 56 78 90",
+      "schoolId": "school_001",
+      "classId": "3eme_b",
+      "parentIds": ["parent_001"],
+      "dateOfBirth": "2008-07-22",
+      "createdAt": "2024-02-01T08:15:00Z"
+    },
+    {
+      "id": "parent_001",
+      "email": "jean.traore@parent.ecolelumiere.edu",
+      "password": "parent123",
+      "type": "parent",
+      "firstName": "Jean",
+      "lastName": "Traoré",
+      "phone": "+225 07 11 22 33 44",
+      "schoolId": "school_001",
+      "childrenIds": ["student_001", "student_002"],
+      "profession": "Ingénieur",
+      "createdAt": "2024-02-01T07:45:00Z"
+    }
+  ]
+}

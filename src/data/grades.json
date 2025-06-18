@@ -1,0 +1,111 @@
+{
+  "grades": [
+    {
+      "id": "grade_001",
+      "studentId": "student_001",
+      "subjectId": "mathematics",
+      "teacherId": "teacher_001",
+      "classId": "6eme_a",
+      "type": "devoir",
+      "title": "Devoir sur les fractions",
+      "score": 15.5,
+      "maxScore": 20,
+      "date": "2024-03-05T10:00:00Z",
+      "coefficient": 1,
+      "comments": "Très bon travail, continue ainsi !"
+    },
+    {
+      "id": "grade_002",
+      "studentId": "student_001",
+      "subjectId": "french",
+      "teacherId": "teacher_003",
+      "classId": "6eme_a",
+      "type": "controle",
+      "title": "Contrôle de lecture",
+      "score": 13.8,
+      "maxScore": 20,
+      "date": "2024-03-04T14:00:00Z",
+      "coefficient": 2,
+      "comments": "Bonne compréhension du texte"
+    },
+    {
+      "id": "grade_003",
+      "studentId": "student_001",
+      "subjectId": "sciences",
+      "teacherId": "teacher_005",
+      "classId": "6eme_a",
+      "type": "tp",
+      "title": "TP Optique",
+      "score": 16.2,
+      "maxScore": 20,
+      "date": "2024-02-28T15:00:00Z",
+      "coefficient": 1,
+      "comments": "Excellent travail pratique"
+    },
+    {
+      "id": "grade_004",
+      "studentId": "student_002",
+      "subjectId": "history",
+      "teacherId": "teacher_002",
+      "classId": "3eme_b",
+      "type": "devoir",
+      "title": "Devoir sur la colonisation",
+      "score": 11.5,
+      "maxScore": 20,
+      "date": "2024-03-06T09:00:00Z",
+      "coefficient": 1,
+      "comments": "Effort à fournir sur les dates"
+    },
+    {
+      "id": "grade_005",
+      "studentId": "student_002",
+      "subjectId": "mathematics",
+      "teacherId": "teacher_001",
+      "classId": "3eme_b",
+      "type": "examen",
+      "title": "Examen équations du 2nd degré",
+      "score": 14.0,
+      "maxScore": 20,
+      "date": "2024-03-08T08:00:00Z",
+      "coefficient": 3,
+      "comments": "Bon niveau, quelques erreurs de calcul"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "assign_001",
+      "teacherId": "teacher_001",
+      "classId": "6eme_a",
+      "subjectId": "mathematics",
+      "title": "Exercices sur les équations",
+      "description": "Résoudre les exercices 1 à 10 page 45",
+      "dueDate": "2024-03-15T23:59:59Z",
+      "type": "homework",
+      "maxScore": 20,
+      "status": "active",
+      "submissions": [
+        {
+          "studentId": "student_001",
+          "submittedAt": "2024-03-14T20:30:00Z",
+          "status": "submitted",
+          "grade": null
+        }
+      ],
+      "createdAt": "2024-03-10T10:00:00Z"
+    },
+    {
+      "id": "assign_002",
+      "teacherId": "teacher_003",
+      "classId": "6eme_a",
+      "subjectId": "french",
+      "title": "Dissertation sur Molière",
+      "description": "Rédiger une dissertation de 300 mots sur une pièce de Molière",
+      "dueDate": "2024-03-20T23:59:59Z",
+      "type": "essay",
+      "maxScore": 20,
+      "status": "active",
+      "submissions": [],
+      "createdAt": "2024-03-12T14:00:00Z"
+    }
+  ]
+}

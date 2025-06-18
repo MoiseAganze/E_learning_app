@@ -1,0 +1,76 @@
+{
+  "subjects": [
+    {
+      "id": "mathematics",
+      "name": "Mathématiques",
+      "code": "MATH",
+      "coefficient": 4,
+      "color": "#3B82F6",
+      "description": "Algèbre, géométrie, arithmétique",
+      "levels": ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
+    },
+    {
+      "id": "french",
+      "name": "Français",
+      "code": "FR",
+      "coefficient": 3,
+      "color": "#10B981",
+      "description": "Littérature, grammaire, expression écrite et orale",
+      "levels": ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
+    },
+    {
+      "id": "english",
+      "name": "Anglais",
+      "code": "ENG",
+      "coefficient": 2,
+      "color": "#8B5CF6",
+      "description": "Langue vivante 1",
+      "levels": ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
+    },
+    {
+      "id": "sciences",
+      "name": "Sciences Physiques",
+      "code": "SCI",
+      "coefficient": 3,
+      "color": "#F59E0B",
+      "description": "Physique et chimie",
+      "levels": ["4ème", "3ème", "2nd", "1ère", "Terminale"]
+    },
+    {
+      "id": "history",
+      "name": "Histoire",
+      "code": "HIST",
+      "coefficient": 2,
+      "color": "#EF4444",
+      "description": "Histoire générale et de l'Afrique",
+      "levels": ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
+    },
+    {
+      "id": "geography",
+      "name": "Géographie",
+      "code": "GEO",
+      "coefficient": 2,
+      "color": "#06B6D4",
+      "description": "Géographie physique et humaine",
+      "levels": ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
+    },
+    {
+      "id": "physics",
+      "name": "Physique",
+      "code": "PHY",
+      "coefficient": 4,
+      "color": "#7C3AED",
+      "description": "Mécanique, électricité, optique",
+      "levels": ["1ère", "Terminale"]
+    },
+    {
+      "id": "chemistry",
+      "name": "Chimie",
+      "code": "CHEM",
+      "coefficient": 3,
+      "color": "#DC2626",
+      "description": "Chimie générale et organique",
+      "levels": ["1ère", "Terminale"]
+    }
+  ]
+}

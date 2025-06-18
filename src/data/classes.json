@@ -1,0 +1,128 @@
+{
+  "classes": [
+    {
+      "id": "6eme_a",
+      "name": "6ème A",
+      "level": "6ème",
+      "section": "A",
+      "schoolId": "school_001",
+      "mainTeacherId": "teacher_001",
+      "maxStudents": 30,
+      "currentStudents": 28,
+      "subjects": [
+        "mathematics",
+        "french",
+        "english",
+        "sciences",
+        "history",
+        "geography"
+      ],
+      "schedule": {
+        "monday": [
+          {
+            "time": "08:00-09:00",
+            "subject": "mathematics",
+            "teacher": "teacher_001"
+          },
+          {
+            "time": "09:00-10:00",
+            "subject": "french",
+            "teacher": "teacher_003"
+          },
+          {
+            "time": "10:30-11:30",
+            "subject": "english",
+            "teacher": "teacher_004"
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "08:00-09:00",
+            "subject": "sciences",
+            "teacher": "teacher_005"
+          },
+          {
+            "time": "09:00-10:00",
+            "subject": "history",
+            "teacher": "teacher_002"
+          },
+          {
+            "time": "10:30-11:30",
+            "subject": "geography",
+            "teacher": "teacher_002"
+          }
+        ]
+      },
+      "createdAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "5eme_b",
+      "name": "5ème B",
+      "level": "5ème",
+      "section": "B",
+      "schoolId": "school_001",
+      "mainTeacherId": "teacher_001",
+      "maxStudents": 32,
+      "currentStudents": 31,
+      "subjects": [
+        "mathematics",
+        "french",
+        "english",
+        "sciences",
+        "history",
+        "geography"
+      ],
+      "createdAt": "2024-01-15T10:15:00Z"
+    },
+    {
+      "id": "4eme_c",
+      "name": "4ème C",
+      "level": "4ème",
+      "section": "C",
+      "schoolId": "school_001",
+      "mainTeacherId": "teacher_001",
+      "maxStudents": 28,
+      "currentStudents": 26,
+      "subjects": [
+        "mathematics",
+        "french",
+        "english",
+        "sciences",
+        "history",
+        "geography"
+      ],
+      "createdAt": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": "3eme_b",
+      "name": "3ème B",
+      "level": "3ème",
+      "section": "B",
+      "schoolId": "school_001",
+      "mainTeacherId": "teacher_002",
+      "maxStudents": 32,
+      "currentStudents": 31,
+      "subjects": [
+        "mathematics",
+        "french",
+        "english",
+        "sciences",
+        "history",
+        "geography"
+      ],
+      "createdAt": "2024-01-15T10:45:00Z"
+    },
+    {
+      "id": "terminale_c",
+      "name": "Terminale C",
+      "level": "Terminale",
+      "section": "C",
+      "schoolId": "school_001",
+      "mainTeacherId": "teacher_006",
+      "maxStudents": 25,
+      "currentStudents": 24,
+      "subjects": ["mathematics", "physics", "chemistry", "french", "english"],
+      "createdAt": "2024-01-15T11:00:00Z"
+    }
+  ]
+}

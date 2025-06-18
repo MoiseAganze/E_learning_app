@@ -1,0 +1,26 @@
+{
+  "schools": [
+    {
+      "id": "school_001",
+      "name": "École Lumière",
+      "type": "Collège Lycée",
+      "address": "123 Avenue de l'Indépendance",
+      "city": "Abidjan",
+      "country": "Côte d'Ivoire",
+      "phone": "+225 27 20 12 34 56",
+      "email": "contact@ecolelumiere.edu",
+      "website": "www.ecolelumiere.edu",
+      "directorName": "Dr. Amadou Kone",
+      "directorPhone": "+225 07 12 34 56 78",
+      "directorEmail": "directeur@ecolelumiere.edu",
+      "foundedYear": 1995,
+      "totalStudents": 1247,
+      "totalTeachers": 89,
+      "totalClasses": 42,
+      "subscriptionPlan": "premium",
+      "subscriptionStartDate": "2024-01-01T00:00:00Z",
+      "subscriptionEndDate": "2024-12-31T23:59:59Z",
+      "createdAt": "2024-01-01T00:00:00Z"
+    }
+  ]
+}

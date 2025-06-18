@@ -361,12 +361,12 @@ const Index = () => {
             votre établissement.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/dashboard">
+            <Link to="/connexion">
               <Button
                 size="lg"
                 className="bg-white text-primary hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all"
               >
-                Accéder aux dashboards
+                C'est parti
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -375,7 +375,7 @@ const Index = () => {
               variant="outline"
               className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary"
             >
-              Demander une démo
+              Contactez-nous
             </Button>
           </div>
         </div>
