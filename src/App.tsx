@@ -16,6 +16,8 @@ import {
 import GestionUtilisateurs from "./pages/dashboard/ecole/GestionUtilisateurs";
 import Abonnements from "./pages/dashboard/ecole/Abonnements";
 import Resultats from "./pages/dashboard/ecole/Resultats";
+import EmploisTemps from "./pages/dashboard/ecole/EmploisTemps";
+import Communications from "./pages/dashboard/ecole/Communications";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +43,14 @@ const App = () => (
             element={<Abonnements />}
           />
           <Route path="/dashboard/ecole/resultats" element={<Resultats />} />
+          <Route
+            path="/dashboard/ecole/emplois-temps"
+            element={<EmploisTemps />}
+          />
+          <Route
+            path="/dashboard/ecole/communications"
+            element={<Communications />}
+          />
 
           <Route
             path="/dashboard/enseignant"
