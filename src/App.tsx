@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import DashboardSelector from "./pages/DashboardSelector";
 import {
   EcoleDashboard,
   EnseignantDashboard,
@@ -24,6 +25,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/connexion" element={<Login />} />
+
+          {/* Route de sélection de dashboard */}
+          <Route path="/dashboard" element={<DashboardSelector />} />
 
           {/* Routes Dashboard */}
           <Route path="/dashboard/ecole" element={<EcoleDashboard />} />
