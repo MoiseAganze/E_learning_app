@@ -2,6 +2,7 @@ import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import {
   Users,
   GraduationCap,
@@ -74,55 +75,106 @@ export default function EcoleDashboard() {
     <DashboardLayout userType="ecole" userName="Direction École Lumière">
       <div className="space-y-6">
         {/* En-tête */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">
+        <motion.div
+          className="flex flex-col lg:flex-row lg:items-center justify-between gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
               Tableau de bord École
             </h1>
             <p className="text-gray-600 mt-1">
               Vue d'ensemble de votre établissement scolaire
             </p>
-          </div>
-          <div className="flex space-x-3">
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              <UserPlus className="w-4 h-4 mr-2" />
-              Ajouter un utilisateur
-            </Button>
-            <Button variant="outline">
-              <MessageSquare className="w-4 h-4 mr-2" />
-              Nouvelle communication
-            </Button>
-          </div>
-        </div>
+          </motion.div>
+          <motion.div
+            className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
+                <UserPlus className="w-4 h-4 mr-2" />
+                Ajouter un utilisateur
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button variant="outline" className="w-full sm:w-auto">
+                <MessageSquare className="w-4 h-4 mr-2" />
+                Nouvelle communication
+              </Button>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* Statistiques */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           {stats.map((stat, index) => (
-            <Card key={index}>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">
-                      {stat.title}
-                    </p>
-                    <p className="text-2xl font-bold text-gray-900">
-                      {stat.value}
-                    </p>
-                    <Badge
-                      variant="secondary"
-                      className="mt-2 text-green-700 bg-green-100"
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Card className="hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+                <CardContent className="p-4 lg:p-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-gray-600">
+                        {stat.title}
+                      </p>
+                      <motion.p
+                        className="text-xl lg:text-2xl font-bold text-gray-900 mt-1"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+                      >
+                        {stat.value}
+                      </motion.p>
+                      <motion.div
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                      >
+                        <Badge
+                          variant="secondary"
+                          className="mt-2 text-green-700 bg-green-100"
+                        >
+                          {stat.change}
+                        </Badge>
+                      </motion.div>
+                    </div>
+                    <motion.div
+                      className={`p-3 rounded-full ${stat.bgColor}`}
+                      initial={{ scale: 0, rotate: -180 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                      whileHover={{ rotate: 10, scale: 1.1 }}
                     >
-                      {stat.change}
-                    </Badge>
+                      <stat.icon
+                        className={`w-5 h-5 lg:w-6 lg:h-6 ${stat.color}`}
+                      />
+                    </motion.div>
                   </div>
-                  <div className={`p-3 rounded-full ${stat.bgColor}`}>
-                    <stat.icon className={`w-6 h-6 ${stat.color}`} />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Activités récentes */}
