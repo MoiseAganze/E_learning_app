@@ -88,7 +88,7 @@ const Login = () => {
         className="absolute top-20 left-10 w-20 h-20 bg-blue-200/30 rounded-full"
         animate={{
           y: [0, -20, 0],
-          rotate: [0, 180, 360]
+          rotate: [0, 180, 360],
         }}
         transition={{ duration: 8, repeat: Infinity }}
       />
@@ -96,7 +96,7 @@ const Login = () => {
         className="absolute bottom-20 right-10 w-16 h-16 bg-purple-200/30 rounded-full"
         animate={{
           y: [0, 20, 0],
-          rotate: [0, -180, -360]
+          rotate: [0, -180, -360],
         }}
         transition={{ duration: 6, repeat: Infinity, delay: 1 }}
       />
@@ -259,102 +259,103 @@ const Login = () => {
                 </motion.div>
               </form>
 
-            <Separator className="my-6" />
+              <Separator className="my-6" />
 
-            {/* Comptes de démonstration */}
-            <div className="space-y-3">
-              <p className="text-sm font-medium text-center text-gray-700">
-                Comptes de démonstration
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() =>
-                    handleDemoLogin(
-                      "École",
-                      "admin@ecolelumiere.edu",
-                      "admin123",
-                    )
-                  }
-                  disabled={loading}
-                  className="text-xs"
-                >
-                  <School className="w-3 h-3 mr-1" />
-                  École
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() =>
-                    handleDemoLogin(
-                      "Enseignant",
-                      "marie.diallo@ecolelumiere.edu",
-                      "teacher123",
-                    )
-                  }
-                  disabled={loading}
-                  className="text-xs"
-                >
-                  <User className="w-3 h-3 mr-1" />
-                  Enseignant
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() =>
-                    handleDemoLogin(
-                      "Élève",
-                      "aya.traore@student.ecolelumiere.edu",
-                      "student123",
-                    )
-                  }
-                  disabled={loading}
-                  className="text-xs"
-                >
-                  <Users className="w-3 h-3 mr-1" />
-                  Élève
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() =>
-                    handleDemoLogin(
-                      "Parent",
-                      "jean.traore@parent.ecolelumiere.edu",
-                      "parent123",
-                    )
-                  }
-                  disabled={loading}
-                  className="text-xs"
-                >
-                  <UserCheck className="w-3 h-3 mr-1" />
-                  Parent
-                </Button>
-              </div>
-            </div>
-
-            <div className="mt-6">
-              <div className="text-center text-sm text-gray-600 mb-4">
-                <a href="#" className="hover:text-primary">
-                  Mot de passe oublié ?
-                </a>
-              </div>
-              <div className="text-center">
-                <p className="text-sm text-gray-600">
-                  Première utilisation ?{" "}
-                  <Link
-                    to="/inscription-admin"
-                    className="text-primary hover:underline"
-                  >
-                    Inscrire votre école
-                  </Link>
+              {/* Comptes de démonstration */}
+              <div className="space-y-3">
+                <p className="text-sm font-medium text-center text-gray-700">
+                  Comptes de démonstration
                 </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() =>
+                      handleDemoLogin(
+                        "École",
+                        "admin@ecolelumiere.edu",
+                        "admin123",
+                      )
+                    }
+                    disabled={loading}
+                    className="text-xs"
+                  >
+                    <School className="w-3 h-3 mr-1" />
+                    École
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() =>
+                      handleDemoLogin(
+                        "Enseignant",
+                        "marie.diallo@ecolelumiere.edu",
+                        "teacher123",
+                      )
+                    }
+                    disabled={loading}
+                    className="text-xs"
+                  >
+                    <User className="w-3 h-3 mr-1" />
+                    Enseignant
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() =>
+                      handleDemoLogin(
+                        "Élève",
+                        "aya.traore@student.ecolelumiere.edu",
+                        "student123",
+                      )
+                    }
+                    disabled={loading}
+                    className="text-xs"
+                  >
+                    <Users className="w-3 h-3 mr-1" />
+                    Élève
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() =>
+                      handleDemoLogin(
+                        "Parent",
+                        "jean.traore@parent.ecolelumiere.edu",
+                        "parent123",
+                      )
+                    }
+                    disabled={loading}
+                    className="text-xs"
+                  >
+                    <UserCheck className="w-3 h-3 mr-1" />
+                    Parent
+                  </Button>
+                </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+
+              <div className="mt-6">
+                <div className="text-center text-sm text-gray-600 mb-4">
+                  <a href="#" className="hover:text-primary">
+                    Mot de passe oublié ?
+                  </a>
+                </div>
+                <div className="text-center">
+                  <p className="text-sm text-gray-600">
+                    Première utilisation ?{" "}
+                    <Link
+                      to="/inscription-admin"
+                      className="text-primary hover:underline"
+                    >
+                      Inscrire votre école
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
