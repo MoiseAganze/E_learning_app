@@ -676,7 +676,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+          <div className="border-t border-gray-800 pt-8 pb-5 sm:pb-0 text-center text-gray-400">
             <p>
               &copy; 2024 EduAfrique. Tous droits réservés. Fait avec ❤️ pour
               l'Afrique.
