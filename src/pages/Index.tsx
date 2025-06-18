@@ -60,7 +60,7 @@ const Index = () => {
               <motion.button
                 className="p-2 rounded-md text-gray-600 hover:text-primary"
                 whileTap={{ scale: 0.95 }}
-              />
+              ></motion.button>
             </div>
 
             <motion.div
