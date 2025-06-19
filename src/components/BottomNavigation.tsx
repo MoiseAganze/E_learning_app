@@ -19,18 +19,6 @@ const navItems: BottomNavItem[] = [
     href: "#",
   },
   {
-    id: "fonctionnalites",
-    icon: BookOpen,
-    label: "Fonctions",
-    href: "#fonctionnalites",
-  },
-  {
-    id: "apropos",
-    icon: Users,
-    label: "À propos",
-    href: "#apropos",
-  },
-  {
     id: "contact",
     icon: MessageCircle,
     label: "Contact",
@@ -43,7 +31,7 @@ export function BottomNavigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["accueil", "fonctionnalites", "apropos", "contact"];
+      const sections = ["accueil", "contact"];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections.reverse()) {
