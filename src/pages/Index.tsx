@@ -52,9 +52,7 @@ const Index = () => {
               >
                 <GraduationCap className="h-8 w-8 text-primary" />
               </motion.div>
-              <span className="text-xl font-bold text-gray-900">
-                EduAfrique
-              </span>
+              <span className="text-xl font-bold text-gray-900">Klaso</span>
             </motion.div>
 
             {/* Menu mobile amélioré */}
@@ -409,7 +407,7 @@ const Index = () => {
                 Conçu pour l'Afrique, par l'Afrique
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                EduAfrique comprend les défis uniques de l'éducation en Afrique
+                Klaso comprend les défis uniques de l'éducation en Afrique
                 francophone. Notre plateforme s'adapte aux réalités locales tout
                 en offrant une technologie de pointe.
               </p>
@@ -561,7 +559,7 @@ const Index = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <GraduationCap className="h-8 w-8 text-primary" />
-                <span className="text-xl font-bold">EduAfrique</span>
+                <span className="text-xl font-bold">Klaso</span>
               </div>
               <p className="text-gray-400">
                 Transformons l'éducation en Afrique avec une plateforme moderne
@@ -668,7 +666,7 @@ const Index = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-gray-400">
-                <p>📧 contact@eduafrique.com</p>
+                <p>📧 aganzedev@gmail.com</p>
                 <p>📞 +243 99 23 35 768</p>
                 <p>📍 Kinshasa, RDC</p>
               </div>
@@ -677,7 +675,7 @@ const Index = () => {
 
           <div className="border-t border-gray-800 pt-8 pb-20 sm:pb-5 text-center text-gray-400">
             <p>
-              &copy; 2024 EduAfrique. Tous droits réservés. Fait avec ❤️ pour
+              &copy; 2024 Klaso. Tous droits réservés. Fait avec ❤️ pour
               l'Afrique.
             </p>
           </div>

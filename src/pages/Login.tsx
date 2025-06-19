@@ -183,6 +183,80 @@ const Login = () => {
               </CardHeader>
             </motion.div>
             <CardContent>
+              {/* Comptes de démonstration */}
+              <div className="space-y-3">
+                <p className="text-sm font-medium text-center text-gray-700">
+                  Comptes de démonstration
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() =>
+                      handleDemoLogin(
+                        "École",
+                        "admin@ecolelumiere.cd",
+                        "admin123",
+                      )
+                    }
+                    disabled={loading}
+                    className="text-xs"
+                  >
+                    <School className="w-3 h-3 mr-1" />
+                    École
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() =>
+                      handleDemoLogin(
+                        "Enseignant",
+                        "grace.mukendi@ecolelumiere.cd",
+                        "teacher123",
+                      )
+                    }
+                    disabled={loading}
+                    className="text-xs"
+                  >
+                    <User className="w-3 h-3 mr-1" />
+                    Enseignant
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() =>
+                      handleDemoLogin(
+                        "Élève",
+                        "divine.kabila@student.ecolelumiere.cd",
+                        "student123",
+                      )
+                    }
+                    disabled={loading}
+                    className="text-xs"
+                  >
+                    <Users className="w-3 h-3 mr-1" />
+                    Élève
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() =>
+                      handleDemoLogin(
+                        "Parent",
+                        "joseph.kabila@parent.ecolelumiere.cd",
+                        "parent123",
+                      )
+                    }
+                    disabled={loading}
+                    className="text-xs"
+                  >
+                    <UserCheck className="w-3 h-3 mr-1" />
+                    Parent
+                  </Button>
+                </div>
+              </div>
+              <Separator className="my-6" />
+
               <form onSubmit={handleSubmit} className="space-y-4">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -258,81 +332,6 @@ const Login = () => {
                   </motion.div>
                 </motion.div>
               </form>
-
-              <Separator className="my-6" />
-
-              {/* Comptes de démonstration */}
-              <div className="space-y-3">
-                <p className="text-sm font-medium text-center text-gray-700">
-                  Comptes de démonstration
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() =>
-                      handleDemoLogin(
-                        "École",
-                        "admin@ecolelumiere.cd",
-                        "admin123",
-                      )
-                    }
-                    disabled={loading}
-                    className="text-xs"
-                  >
-                    <School className="w-3 h-3 mr-1" />
-                    École
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() =>
-                      handleDemoLogin(
-                        "Enseignant",
-                        "grace.mukendi@ecolelumiere.cd",
-                        "teacher123",
-                      )
-                    }
-                    disabled={loading}
-                    className="text-xs"
-                  >
-                    <User className="w-3 h-3 mr-1" />
-                    Enseignant
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() =>
-                      handleDemoLogin(
-                        "Élève",
-                        "divine.kabila@student.ecolelumiere.cd",
-                        "student123",
-                      )
-                    }
-                    disabled={loading}
-                    className="text-xs"
-                  >
-                    <Users className="w-3 h-3 mr-1" />
-                    Élève
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() =>
-                      handleDemoLogin(
-                        "Parent",
-                        "joseph.kabila@parent.ecolelumiere.cd",
-                        "parent123",
-                      )
-                    }
-                    disabled={loading}
-                    className="text-xs"
-                  >
-                    <UserCheck className="w-3 h-3 mr-1" />
-                    Parent
-                  </Button>
-                </div>
-              </div>
 
               <div className="mt-6">
                 <div className="text-center text-sm text-gray-600 mb-4">
