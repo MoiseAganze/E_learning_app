@@ -283,7 +283,7 @@ export default function Communications() {
       <div className="space-y-6">
         {/* En-tête */}
         <motion.div
-          className="flex items-center justify-between"
+          className="flex flex-col lg:flex-row items-center justify-between"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
