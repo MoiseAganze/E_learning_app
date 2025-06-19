@@ -19,6 +19,10 @@ import Resultats from "./pages/dashboard/ecole/Resultats";
 import EmploisTemps from "./pages/dashboard/ecole/EmploisTemps";
 import Communications from "./pages/dashboard/ecole/Communications";
 import Bibliotheque from "./pages/dashboard/enseignant/Bibliotheque";
+import CoursEleve from "./pages/dashboard/eleve/CoursEleve";
+import DevoirsEnseignant from "./pages/dashboard/enseignant/DevoirsEnseignant";
+import MessagerieParent from "./pages/dashboard/parent/MessagerieParent";
+import QuizGamifie from "./pages/dashboard/eleve/QuizGamifie";
 
 const queryClient = new QueryClient();
 
@@ -61,8 +65,20 @@ const App = () => (
             path="/dashboard/enseignant/bibliotheque"
             element={<Bibliotheque />}
           />
+          <Route
+            path="/dashboard/enseignant/devoirs"
+            element={<DevoirsEnseignant />}
+          />
+
           <Route path="/dashboard/eleve" element={<EleveDashboard />} />
+          <Route path="/dashboard/eleve/cours" element={<CoursEleve />} />
+          <Route path="/dashboard/eleve/quiz" element={<QuizGamifie />} />
+
           <Route path="/dashboard/parent" element={<ParentDashboard />} />
+          <Route
+            path="/dashboard/parent/communication"
+            element={<MessagerieParent />}
+          />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
