@@ -192,7 +192,8 @@ export default function Abonnements() {
                         Plan {currentPlan.name}
                       </h3>
                       <p className="text-sm text-gray-600">
-                        {formatPrice(currentPlan.price, currentPlan.currency)}
+                        {currentPlan.price + " " + currentPlan.currency}
+                        {/* {formatPrice(currentPlan.price, currentPlan.currency)} */}
                         /mois
                       </p>
                     </div>
@@ -236,19 +237,22 @@ export default function Abonnements() {
                   <div className="flex items-center justify-between text-sm">
                     <span>Montant total</span>
                     <span className="font-medium">
-                      {formatPrice(currentSubscription.totalAmount, "XOF")}
+                      {currentSubscription.totalAmount}
+                      {/* {formatPrice(currentSubscription.totalAmount, "XOF")} */}
                     </span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span>Montant payé</span>
                     <span className="text-green-600 font-medium">
-                      {formatPrice(currentSubscription.paidAmount, "XOF")}
+                      {currentSubscription.paidAmount}
+                      {/* {formatPrice(currentSubscription.paidAmount, "XOF")} */}
                     </span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span>Montant restant</span>
                     <span className="text-orange-600 font-medium">
-                      {formatPrice(currentSubscription.remainingAmount, "XOF")}
+                      {currentSubscription.remainingAmount}
+                      {/* {formatPrice(currentSubscription.remainingAmount, "XOF")} */}
                     </span>
                   </div>
                 </div>
@@ -295,7 +299,8 @@ export default function Abonnements() {
                   </div>
                   <CardTitle className="text-xl">{plan.name}</CardTitle>
                   <div className="text-3xl font-bold text-gray-900">
-                    {formatPrice(plan.price, plan.currency)}
+                    {plan.price + " " + plan.currency}
+                    {/* {formatPrice(plan.price, plan.currency)} */}
                     <span className="text-sm font-normal text-gray-600">
                       /mois
                     </span>
@@ -379,7 +384,8 @@ export default function Abonnements() {
                             <div className="flex justify-between items-center mb-2">
                               <span>Nouveau prix mensuel :</span>
                               <span className="font-semibold">
-                                {formatPrice(plan.price, plan.currency)}
+                                {plan.price + " " + plan.currency}
+                                {/* {formatPrice(plan.price, plan.currency)} */}
                               </span>
                             </div>
                             <div className="flex justify-between items-center">
@@ -441,7 +447,7 @@ export default function Abonnements() {
                   <Badge className="bg-green-100 text-green-800 mb-2">
                     Payée
                   </Badge>
-                  <p className="text-sm font-medium">600 000 XOF</p>
+                  <p className="text-sm font-medium">600 000 CDF</p>
                 </div>
               </div>
 
@@ -458,7 +464,7 @@ export default function Abonnements() {
                   <Badge className="bg-orange-100 text-orange-800 mb-2">
                     En attente
                   </Badge>
-                  <p className="text-sm font-medium">600 000 XOF</p>
+                  <p className="text-sm font-medium">600 000 CDF</p>
                 </div>
               </div>
             </div>

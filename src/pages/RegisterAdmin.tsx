@@ -133,8 +133,8 @@ export default function RegisterAdmin() {
         {/* En-tête */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">EA</span>
+            <div className="px-4 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold text-2xl">Klaso</span>
             </div>
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -142,7 +142,7 @@ export default function RegisterAdmin() {
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Créez un compte administrateur et enregistrez votre établissement
-            scolaire pour commencer à utiliser EduAfrique
+            scolaire pour commencer à utiliser Klaso
           </p>
           <Badge className="mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
             <Shield className="w-4 h-4 mr-2" />

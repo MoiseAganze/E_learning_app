@@ -120,7 +120,7 @@ const Login = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <motion.div
-              className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
+              className="px-4 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
               whileHover={{ scale: 1.05, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -129,18 +129,18 @@ const Login = () => {
                 animate={{ rotateY: [0, 360] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
               >
-                EA
+                KLASO
               </motion.span>
             </motion.div>
           </motion.div>
-          <motion.h1
+          {/* <motion.h1
             className="text-3xl font-bold text-gray-900"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            EduAfrique
-          </motion.h1>
+            Klaso
+          </motion.h1> */}
           <motion.p
             className="text-gray-600 mt-2"
             initial={{ opacity: 0 }}

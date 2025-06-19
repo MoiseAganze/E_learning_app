@@ -66,7 +66,7 @@ const NotFound = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Cette page fait partie de nos prochaines fonctionnalités. L'équipe
-              EduAfrique travaille activement pour vous l'apporter bientôt !
+              Klaso travaille activement pour vous l'apporter bientôt !
             </motion.p>
 
             {/* URL demandée */}
