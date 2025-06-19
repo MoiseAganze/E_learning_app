@@ -201,23 +201,25 @@ export default function Resultats() {
     <DashboardLayout userType="ecole">
       <div className="space-y-6">
         {/* En-tête */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div className="min-w-0">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
               Résultats et Bulletins
             </h1>
-            <p className="text-gray-600 mt-1">
+            <p className="text-sm sm:text-base text-gray-600 mt-1">
               Analysez les performances et générez les bulletins
             </p>
           </div>
-          <div className="flex space-x-3">
-            <Button className="bg-blue-600 hover:bg-blue-700">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 shrink-0">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-sm h-9">
               <Download className="w-4 h-4 mr-2" />
-              Exporter les résultats
+              <span className="hidden sm:inline">Exporter les résultats</span>
+              <span className="sm:hidden">Exporter</span>
             </Button>
-            <Button variant="outline">
+            <Button variant="outline" className="text-sm h-9">
               <FileText className="w-4 h-4 mr-2" />
-              Générer les bulletins
+              <span className="hidden sm:inline">Générer les bulletins</span>
+              <span className="sm:hidden">Bulletins</span>
             </Button>
           </div>
         </div>
