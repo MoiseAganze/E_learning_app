@@ -336,7 +336,7 @@ const Index = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
               {
                 icon: GraduationCap,
@@ -371,18 +371,20 @@ const Index = () => {
                 viewport={{ once: true }}
               >
                 <Card className="text-center h-full hover:shadow-lg transition-shadow duration-300">
-                  <CardHeader>
+                  <CardHeader className="pb-4">
                     <div
-                      className={`inline-flex p-3 rounded-lg mb-4 mx-auto bg-${feature.color}-100`}
+                      className={`inline-flex p-3 rounded-lg mb-3 mx-auto bg-${feature.color}-100`}
                     >
                       <feature.icon
                         className={`h-6 w-6 text-${feature.color}-600`}
                       />
                     </div>
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
+                    <CardTitle className="text-lg sm:text-xl">
+                      {feature.title}
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base">
+                  <CardContent className="pt-0">
+                    <CardDescription className="text-sm sm:text-base">
                       {feature.description}
                     </CardDescription>
                   </CardContent>
@@ -411,7 +413,7 @@ const Index = () => {
                 francophone. Notre plateforme s'adapte aux réalités locales tout
                 en offrant une technologie de pointe.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {[
                   {
                     icon: Globe,
@@ -423,9 +425,11 @@ const Index = () => {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="flex-shrink-0">
-                      <item.icon className="h-5 w-5 text-primary" />
+                      <item.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                     </div>
-                    <span className="text-gray-700">{item.text}</span>
+                    <span className="text-gray-700 text-sm sm:text-base">
+                      {item.text}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -437,7 +441,7 @@ const Index = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="grid grid-cols-2 gap-4 items-stretch">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 items-stretch">
                 {[
                   {
                     icon: MessageCircle,
@@ -480,7 +484,7 @@ const Index = () => {
                     <Card
                       className={`bg-gradient-to-br ${feature.gradient} text-white h-full flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300`}
                     >
-                      <CardContent className="p-4 sm:p-6 flex flex-col h-full">
+                      <CardContent className="p-3 sm:p-4 md:p-6 flex flex-col h-full">
                         <motion.div
                           initial={{ scale: 0, rotate: -180 }}
                           whileInView={{ scale: 1, rotate: 0 }}
@@ -490,12 +494,12 @@ const Index = () => {
                           }}
                           viewport={{ once: true }}
                         >
-                          <feature.icon className="h-6 w-6 sm:h-8 sm:w-8 mb-3 sm:mb-4" />
+                          <feature.icon className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 mb-2 sm:mb-3 md:mb-4" />
                         </motion.div>
-                        <h3 className="font-semibold mb-2 text-sm sm:text-base">
+                        <h3 className="font-semibold mb-1 sm:mb-2 text-xs sm:text-sm md:text-base leading-tight">
                           {feature.title}
                         </h3>
-                        <p className="text-xs sm:text-sm opacity-90 flex-1">
+                        <p className="text-xs opacity-90 flex-1 leading-snug">
                           {feature.description}
                         </p>
                       </CardContent>
