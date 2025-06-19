@@ -225,7 +225,7 @@ const Index = () => {
                 whileHover={{ scale: 1.02, rotateY: -2 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                   {[
                     {
                       icon: Users,
@@ -254,7 +254,7 @@ const Index = () => {
                   ].map((stat, index) => (
                     <motion.div
                       key={stat.label}
-                      className="bg-white/20 rounded-xl p-3 sm:p-4 backdrop-blur-sm border border-white/10"
+                      className="bg-white/20 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 backdrop-blur-sm border border-white/10"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.6 + stat.delay }}
@@ -269,10 +269,10 @@ const Index = () => {
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.4, delay: 0.8 + stat.delay }}
                       >
-                        <stat.icon className="h-6 w-6 sm:h-8 sm:w-8 mb-2" />
+                        <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 mb-1 sm:mb-2" />
                       </motion.div>
                       <motion.div
-                        className="text-xl sm:text-2xl font-bold"
+                        className="text-lg sm:text-xl md:text-2xl font-bold"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 1 + stat.delay }}
@@ -280,7 +280,7 @@ const Index = () => {
                         {stat.number}
                       </motion.div>
                       <motion.div
-                        className="text-xs sm:text-sm opacity-90"
+                        className="text-xs sm:text-sm opacity-90 leading-tight"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 1.1 + stat.delay }}
