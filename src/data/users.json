@@ -7,8 +7,11 @@
       "type": "ecole",
       "firstName": "Direction",
       "lastName": "École Lumière",
-      "phone": "+225 07 12 34 56 78",
+      "phone": "+243 99 23 35 768",
       "schoolId": "school_001",
+      "currentToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJhZG1pbl8wMDEiLCJlbWFpbCI6ImFkbWluQGVjb2xlbHVtaWVyZS5lZHUiLCJ0eXBlIjoiZWNvbGUiLCJzY2hvb2xJZCI6InNjaG9vbF8wMDEifQ.signature",
+      "refreshToken": "refresh_admin_001_123456789",
+      "lastLogin": "2024-03-15T08:00:00Z",
       "createdAt": "2024-01-15T08:00:00Z"
     },
     {
@@ -18,10 +21,13 @@
       "type": "enseignant",
       "firstName": "Marie",
       "lastName": "Diallo",
-      "phone": "+225 05 98 76 54 32",
+      "phone": "+243 99 12 34 567",
       "schoolId": "school_001",
       "subjects": ["mathematics"],
       "classes": ["6eme_a", "5eme_b", "4eme_c"],
+      "currentToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJ0ZWFjaGVyXzAwMSIsImVtYWlsIjoibWFyaWUuZGlhbGxvQGVjb2xlbHVtaWVyZS5lZHUiLCJ0eXBlIjoiZW5zZWlnbmFudCIsInNjaG9vbElkIjoic2Nob29sXzAwMSJ9.signature",
+      "refreshToken": "refresh_teacher_001_987654321",
+      "lastLogin": "2024-03-15T09:00:00Z",
       "createdAt": "2024-01-20T09:00:00Z"
     },
     {
