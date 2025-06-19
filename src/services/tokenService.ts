@@ -2,7 +2,7 @@
 export interface TokenPayload {
   userId: string;
   email: string;
-  type: "ecole" | "enseignant" | "eleve" | "parent";
+  type: string; //"ecole" | "enseignant" | "eleve" | "parent";
   schoolId: string;
   iat: number;
   exp: number;

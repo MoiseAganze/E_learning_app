@@ -5,7 +5,7 @@ import { tokenService } from "./tokenService";
 export interface User {
   id: string;
   email: string;
-  type: "ecole" | "enseignant" | "eleve" | "parent";
+  type: string; //"ecole" | "enseignant" | "eleve" | "parent";
   firstName: string;
   lastName: string;
   phone: string;
@@ -100,7 +100,11 @@ class AuthService {
     directorPhone: string;
     directorEmail: string;
     foundedYear: number;
-  }): Promise<{ user: User; school: School }> {
+  }): Promise<{
+    user: User;
+    school: School;
+    tokens: { accessToken: string; refreshToken: string };
+  }> {
     // Simuler un délai de réseau
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
