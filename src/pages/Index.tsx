@@ -700,13 +700,9 @@ const Index = () => {
             <Users className="w-5 h-5" />
             <span className="text-xs mt-1">À propos</span>
           </a>
-          <Link
-            to="/connexion"
-            className="flex flex-col items-center py-2 px-3 text-primary"
-          >
-            <CheckCircle className="w-5 h-5" />
-            <span className="text-xs mt-1">Se connecter</span>
-          </Link>
+          <div className="flex flex-col items-center py-2 px-3">
+            <DynamicNavigation />
+          </div>
         </div>
       </div>
     </div>
