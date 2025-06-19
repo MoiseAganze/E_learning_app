@@ -72,8 +72,8 @@ const recentActivities = [
 
 export default function EcoleDashboard() {
   return (
-    <DashboardLayout userType="ecole" userName="Direction École Lumière">
-      <div className="space-y-6">
+    <DashboardLayout userType="ecole">
+      <div className="space-y-4 lg:space-y-6">
         {/* En-tête */}
         <motion.div
           className="flex flex-col lg:flex-row lg:items-center justify-between gap-4"
@@ -86,10 +86,10 @@ export default function EcoleDashboard() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
               Tableau de bord École
             </h1>
-            <p className="text-gray-600 mt-1">
+            <p className="text-gray-600 mt-1 text-sm sm:text-base">
               Vue d'ensemble de votre établissement scolaire
             </p>
           </motion.div>
@@ -99,80 +99,55 @@ export default function EcoleDashboard() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
-                <UserPlus className="w-4 h-4 mr-2" />
-                Ajouter un utilisateur
-              </Button>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button variant="outline" className="w-full sm:w-auto">
-                <MessageSquare className="w-4 h-4 mr-2" />
-                Nouvelle communication
-              </Button>
-            </motion.div>
+            <Button variant="outline" className="text-sm h-9">
+              <Calendar className="w-4 h-4 mr-2" />
+              <span className="hidden sm:inline">Voir le </span>Planning
+            </Button>
+            <Button className="text-sm h-9">
+              <UserPlus className="w-4 h-4 mr-2" />
+              <span className="hidden sm:inline">Ajouter </span>Utilisateur
+            </Button>
           </motion.div>
         </motion.div>
 
-        {/* Statistiques */}
+        {/* Statistiques principales */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           {stats.map((stat, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              key={stat.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+              whileHover={{ y: -2 }}
             >
-              <Card className="hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
-                <CardContent className="p-4 lg:p-6">
+              <Card className="relative overflow-hidden hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-4 sm:p-6">
                   <div className="flex items-center justify-between">
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-600">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm font-medium text-gray-600 truncate">
                         {stat.title}
                       </p>
-                      <motion.p
-                        className="text-xl lg:text-2xl font-bold text-gray-900 mt-1"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                      >
-                        {stat.value}
-                      </motion.p>
-                      <motion.div
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
-                      >
-                        <Badge
-                          variant="secondary"
-                          className="mt-2 text-green-700 bg-green-100"
-                        >
+                      <div className="flex items-center space-x-2 mt-2">
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                          {stat.value}
+                        </h3>
+                        <Badge variant="secondary" className="text-xs shrink-0">
                           {stat.change}
                         </Badge>
-                      </motion.div>
+                      </div>
                     </div>
-                    <motion.div
-                      className={`p-3 rounded-full ${stat.bgColor}`}
-                      initial={{ scale: 0, rotate: -180 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                      whileHover={{ rotate: 10, scale: 1.1 }}
+                    <div
+                      className={`p-2 sm:p-3 rounded-lg ${stat.bgColor} shrink-0`}
                     >
-                      <stat.icon className={`w-5 h-5 lg:w-6 lg:h-6 ${stat.color}`} />
-                    </motion.div>
+                      <stat.icon
+                        className={`h-5 w-5 sm:h-6 sm:w-6 ${stat.color}`}
+                      />
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -180,135 +155,117 @@ export default function EcoleDashboard() {
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Contenu principal */}
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 lg:gap-6">
           {/* Activités récentes */}
-            <Card className="relative overflow-hidden hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-4 sm:p-6">
-                <div className="flex items-center justify-between">
-                  <div className="min-w-0 flex-1">
-                    <p className="text-xs sm:text-sm font-medium text-gray-600 truncate">{stat.title}</p>
-                    <div className="flex items-center space-x-2 mt-2">
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{stat.value}</h3>
-                      <Badge variant="secondary" className="text-xs shrink-0">
-                        {stat.change}
-                      </Badge>
-                    </div>
+          <div className="xl:col-span-2">
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center gap-2 text-lg">
+                  <BarChart3 className="h-5 w-5" />
+                  Activités récentes
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {recentActivities.map((activity, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex items-center space-x-3 sm:space-x-4 p-3 bg-gray-50 rounded-lg"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                      whileHover={{ scale: 1.02, backgroundColor: "#f8fafc" }}
+                    >
+                      <div
+                        className={`w-2 h-2 rounded-full shrink-0 ${
+                          activity.type === "success"
+                            ? "bg-green-500"
+                            : activity.type === "warning"
+                              ? "bg-yellow-500"
+                              : "bg-blue-500"
+                        }`}
+                      />
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-gray-900 text-sm sm:text-base truncate">
+                          {activity.action}
+                        </p>
+                        <p className="text-xs sm:text-sm text-gray-600 truncate">
+                          {activity.user} • {activity.time}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Actions rapides */}
+          <div className="space-y-4 lg:space-y-6">
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">Actions rapides</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start text-sm h-10"
+                  >
+                    <Users className="w-4 h-4 mr-3" />
+                    Gérer les utilisateurs
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start text-sm h-10"
+                  >
+                    <BookOpen className="w-4 h-4 mr-3" />
+                    Consulter les résultats
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start text-sm h-10"
+                  >
+                    <MessageSquare className="w-4 h-4 mr-3" />
+                    Envoyer une communication
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full justify-start text-sm h-10"
+                  >
+                    <Calendar className="w-4 h-4 mr-3" />
+                    Planifier un événement
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg">Notifications</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="text-sm text-gray-600">
+                    <p className="font-medium text-gray-900 mb-1">
+                      Nouveau message
+                    </p>
+                    <p>Demande de réunion parent</p>
+                    <p className="text-xs text-gray-400 mt-1">Il y a 1h</p>
                   </div>
-                  <div className={`p-2 sm:p-3 rounded-lg ${stat.bgColor} shrink-0`}>
-                    <stat.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${stat.color}`} />
+                  <div className="text-sm text-gray-600">
+                    <p className="font-medium text-gray-900 mb-1">
+                      Paiement reçu
+                    </p>
+                    <p>Frais de scolarité - Janvier</p>
+                    <p className="text-xs text-gray-400 mt-1">Il y a 3h</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
-                      <p className="text-sm text-gray-600">{activity.user}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm text-gray-500">{activity.time}</p>
-                      <Badge
-                        variant={
-                          activity.type === "success"
-                            ? "default"
-                            : activity.type === "warning"
-                              ? "destructive"
-                              : "secondary"
-                        }
-                        className="mt-1"
-                      >
-                        {activity.type === "success"
-                          ? "Nouveau"
-                          : activity.type === "warning"
-                            ? "Important"
-                            : "Info"}
-                      </Badge>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Actions rapides */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Actions rapides</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <Button variant="outline" className="w-full justify-start">
-                <Users className="w-4 h-4 mr-2" />
-                Gérer les utilisateurs
-              </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <Calendar className="w-4 h-4 mr-2" />
-                Emplois du temps
-              </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <BarChart3 className="w-4 h-4 mr-2" />
-                Voir les résultats
-              </Button>
-              <Button variant="outline" className="w-full justify-start">
-                <MessageSquare className="w-4 h-4 mr-2" />
-                Communications
-              </Button>
-            </CardContent>
-          </Card>
+          </div>
         </div>
-
-        {/* Tableau des classes récentes */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Classes les plus actives</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-2">Classe</th>
-                    <th className="text-left py-2">Enseignant</th>
-                    <th className="text-left py-2">Élèves</th>
-                    <th className="text-left py-2">Moyenne</th>
-                    <th className="text-left py-2">Présence</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b">
-                    <td className="py-3">6ème A</td>
-                    <td className="py-3">Mme Diallo</td>
-                    <td className="py-3">28</td>
-                    <td className="py-3">
-                      <Badge className="bg-green-100 text-green-800">
-                        15.2/20
-                      </Badge>
-                    </td>
-                    <td className="py-3">96%</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-3">3ème B</td>
-                    <td className="py-3">M. Ouattara</td>
-                    <td className="py-3">31</td>
-                    <td className="py-3">
-                      <Badge className="bg-blue-100 text-blue-800">
-                        14.8/20
-                      </Badge>
-                    </td>
-                    <td className="py-3">94%</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3">Terminale C</td>
-                    <td className="py-3">Dr. Koné</td>
-                    <td className="py-3">24</td>
-                    <td className="py-3">
-                      <Badge className="bg-purple-100 text-purple-800">
-                        16.1/20
-                      </Badge>
-                    </td>
-                    <td className="py-3">98%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </DashboardLayout>
   );

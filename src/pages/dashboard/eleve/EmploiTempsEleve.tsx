@@ -297,31 +297,33 @@ export default function EmploiTempsEleve() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {prochainsCours.map((cours, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                    className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                   >
                     <div
-                      className={`w-4 h-16 ${cours.couleur} rounded-lg`}
+                      className={`w-3 h-12 sm:w-4 sm:h-16 ${cours.couleur} rounded-lg shrink-0`}
                     ></div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-semibold text-gray-900">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-1">
+                        <h3 className="font-semibold text-gray-900 text-sm sm:text-base truncate">
                           {cours.matiere}
                         </h3>
-                        <Badge className={getTypeColor(cours.type)}>
+                        <Badge
+                          className={`${getTypeColor(cours.type)} shrink-0 self-start sm:self-center`}
+                        >
                           {getTypeLabel(cours.type)}
                         </Badge>
                       </div>
-                      <p className="text-sm text-gray-600 mb-1">
+                      <p className="text-xs sm:text-sm text-gray-600 mb-1 truncate">
                         {cours.professeur}
                       </p>
-                      <div className="flex items-center gap-4 text-xs text-gray-500">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-xs text-gray-500">
                         <span className="flex items-center gap-1">
                           <Clock className="w-3 h-3" />
                           {cours.heure} ({cours.duree})
@@ -332,8 +334,15 @@ export default function EmploiTempsEleve() {
                         </span>
                       </div>
                     </div>
-                    <Button variant="outline" size="sm">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="shrink-0 h-8 w-8 sm:h-9 sm:w-auto sm:px-3"
+                    >
                       <Video className="w-4 h-4" />
+                      <span className="hidden sm:inline sm:ml-2">
+                        Rejoindre
+                      </span>
                     </Button>
                   </motion.div>
                 ))}
