@@ -2,59 +2,97 @@
   "plans": [
     {
       "id": "basic",
-      "name": "Basique",
-      "price": 50000,
-      "currency": "XOF",
+      "name": "Plan Basique",
+      "price": 120000,
+      "currency": "CDF",
+      "currencySymbol": "FC",
       "billing": "monthly",
-      "maxStudents": 100,
-      "maxTeachers": 10,
+      "maxStudents": 150,
+      "maxTeachers": 15,
       "features": [
-        "Gestion des notes",
-        "Emploi du temps",
-        "Communication de base",
-        "Rapports simples"
+        "Gestion des notes et bulletins",
+        "Emploi du temps numérique",
+        "Communication école-parents",
+        "Rapports de base",
+        "Support en français et lingala"
       ],
       "limitations": [
-        "Support par email uniquement",
-        "Stockage 1GB",
-        "Pas de modules avancés"
-      ]
+        "Support par WhatsApp uniquement",
+        "Stockage 2GB",
+        "Pas de modules avancés",
+        "Pas de visioconférence"
+      ],
+      "popular": false
     },
     {
       "id": "standard",
-      "name": "Standard",
-      "price": 100000,
-      "currency": "XOF",
+      "name": "Plan Standard",
+      "price": 250000,
+      "currency": "CDF",
+      "currencySymbol": "FC",
       "billing": "monthly",
-      "maxStudents": 500,
-      "maxTeachers": 50,
+      "maxStudents": 800,
+      "maxTeachers": 80,
       "features": [
         "Tout du plan Basique",
-        "Modules d'apprentissage",
-        "Bulletins automatisés",
-        "Analyses détaillées",
-        "Support téléphonique"
+        "Modules d'apprentissage interactifs",
+        "Bulletins automatisés avec sceau numérique",
+        "Analyses détaillées des performances",
+        "Support téléphonique en français",
+        "Intégration Mobile Money (M-Pesa, Airtel Money)",
+        "Gestion des frais scolaires"
       ],
-      "limitations": ["Stockage 10GB", "Intégrations limitées"]
+      "limitations": ["Stockage 20GB", "Intégrations limitées"],
+      "popular": true
     },
     {
       "id": "premium",
-      "name": "Premium",
-      "price": 200000,
-      "currency": "XOF",
+      "name": "Plan Premium",
+      "price": 480000,
+      "currency": "CDF",
+      "currencySymbol": "FC",
       "billing": "monthly",
-      "maxStudents": 2000,
-      "maxTeachers": 200,
+      "maxStudents": 3000,
+      "maxTeachers": 300,
       "features": [
         "Tout du plan Standard",
-        "Visioconférences intégrées",
-        "API complète",
-        "Formations personnalisées",
-        "Support prioritaire 24/7",
-        "Stockage illimité",
-        "Intégrations avancées"
+        "Visioconférences intégrées (Zoom/Teams)",
+        "API complète pour intégrations",
+        "Formations personnalisées pour équipes",
+        "Support prioritaire 24/7 multilingue",
+        "Stockage illimité dans le cloud",
+        "Intégrations bancaires (Rawbank, Equity)",
+        "Rapports avancés et analytics",
+        "Module IA pour assistance pédagogique",
+        "Sauvegarde automatique multi-sites"
       ],
-      "limitations": []
+      "limitations": [],
+      "popular": false
+    },
+    {
+      "id": "enterprise",
+      "name": "Plan Entreprise",
+      "price": 850000,
+      "currency": "CDF",
+      "currencySymbol": "FC",
+      "billing": "monthly",
+      "maxStudents": 10000,
+      "maxTeachers": 1000,
+      "features": [
+        "Tout du plan Premium",
+        "Déploiement multi-établissements",
+        "Infrastructure dédiée",
+        "Formation sur site",
+        "Support dédié 24/7",
+        "Personnalisation complète",
+        "Intégration EPST-RDC",
+        "Conformité GDPR et données locales",
+        "API sur mesure",
+        "Consultant dédié"
+      ],
+      "limitations": [],
+      "popular": false,
+      "custom": true
     }
   ],
   "subscriptions": [
@@ -66,12 +104,49 @@
       "startDate": "2024-01-01T00:00:00Z",
       "endDate": "2024-12-31T23:59:59Z",
       "autoRenew": true,
-      "paymentMethod": "bank_transfer",
+      "paymentMethod": "bank_transfer_rawbank",
       "lastPaymentDate": "2024-01-01T00:00:00Z",
       "nextPaymentDate": "2024-04-01T00:00:00Z",
-      "totalAmount": 2400000,
-      "paidAmount": 600000,
-      "remainingAmount": 1800000
+      "totalAmount": 5760000,
+      "paidAmount": 1440000,
+      "remainingAmount": 4320000,
+      "paymentSchedule": "quarterly",
+      "bankDetails": {
+        "bank": "Rawbank",
+        "accountName": "École Lumière Kinshasa",
+        "accountNumber": "CD15 1234 5678 9012 3456 7890"
+      }
+    },
+    {
+      "id": "sub_002",
+      "schoolId": "school_002",
+      "planId": "standard",
+      "status": "active",
+      "startDate": "2024-02-01T00:00:00Z",
+      "endDate": "2025-01-31T23:59:59Z",
+      "autoRenew": true,
+      "paymentMethod": "mobile_money_mpesa",
+      "lastPaymentDate": "2024-02-01T00:00:00Z",
+      "nextPaymentDate": "2024-05-01T00:00:00Z",
+      "totalAmount": 3000000,
+      "paidAmount": 750000,
+      "remainingAmount": 2250000,
+      "paymentSchedule": "quarterly"
+    },
+    {
+      "id": "sub_003",
+      "schoolId": "school_003",
+      "planId": "basic",
+      "status": "trial",
+      "startDate": "2024-03-01T00:00:00Z",
+      "endDate": "2024-03-31T23:59:59Z",
+      "autoRenew": false,
+      "paymentMethod": "pending",
+      "totalAmount": 120000,
+      "paidAmount": 0,
+      "remainingAmount": 120000,
+      "trialPeriod": true,
+      "trialDaysRemaining": 15
     }
   ],
   "invoices": [
@@ -79,22 +154,91 @@
       "id": "inv_001",
       "subscriptionId": "sub_001",
       "schoolId": "school_001",
-      "amount": 600000,
+      "amount": 1440000,
+      "currency": "CDF",
       "status": "paid",
       "dueDate": "2024-01-31T23:59:59Z",
       "paidDate": "2024-01-15T10:30:00Z",
-      "period": "2024-01-01 to 2024-03-31",
+      "period": "2024-01-01 à 2024-03-31",
+      "paymentMethod": "Virement Rawbank",
+      "referenceNumber": "RWB240115001",
       "createdAt": "2024-01-01T00:00:00Z"
     },
     {
       "id": "inv_002",
       "subscriptionId": "sub_001",
       "schoolId": "school_001",
-      "amount": 600000,
+      "amount": 1440000,
+      "currency": "CDF",
       "status": "pending",
       "dueDate": "2024-04-30T23:59:59Z",
-      "period": "2024-04-01 to 2024-06-30",
+      "period": "2024-04-01 à 2024-06-30",
+      "paymentMethod": "Virement Rawbank",
       "createdAt": "2024-04-01T00:00:00Z"
+    },
+    {
+      "id": "inv_003",
+      "subscriptionId": "sub_002",
+      "schoolId": "school_002",
+      "amount": 750000,
+      "currency": "CDF",
+      "status": "paid",
+      "dueDate": "2024-02-28T23:59:59Z",
+      "paidDate": "2024-02-20T14:45:00Z",
+      "period": "2024-02-01 à 2024-04-30",
+      "paymentMethod": "M-Pesa",
+      "referenceNumber": "MPESA240220789",
+      "createdAt": "2024-02-01T00:00:00Z"
+    }
+  ],
+  "paymentMethods": [
+    {
+      "id": "rawbank",
+      "name": "Rawbank",
+      "type": "bank_transfer",
+      "currency": "CDF",
+      "available": true,
+      "processingTime": "1-2 jours ouvrables",
+      "fees": "Gratuit pour virements > 500,000 FC"
+    },
+    {
+      "id": "equity_bcdc",
+      "name": "Equity BCDC",
+      "type": "bank_transfer",
+      "currency": "CDF",
+      "available": true,
+      "processingTime": "1-2 jours ouvrables",
+      "fees": "2% sur le montant"
+    },
+    {
+      "id": "mpesa",
+      "name": "M-Pesa (Vodacom)",
+      "type": "mobile_money",
+      "currency": "CDF",
+      "available": true,
+      "processingTime": "Instantané",
+      "fees": "1.5% du montant",
+      "maxAmount": 2000000
+    },
+    {
+      "id": "airtel_money",
+      "name": "Airtel Money",
+      "type": "mobile_money",
+      "currency": "CDF",
+      "available": true,
+      "processingTime": "Instantané",
+      "fees": "1.8% du montant",
+      "maxAmount": 1500000
+    },
+    {
+      "id": "orange_money",
+      "name": "Orange Money",
+      "type": "mobile_money",
+      "currency": "CDF",
+      "available": true,
+      "processingTime": "Instantané",
+      "fees": "2% du montant",
+      "maxAmount": 1000000
     }
   ]
 }
