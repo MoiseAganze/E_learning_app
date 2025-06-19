@@ -1,28 +1,25 @@
-import { ReactNode } from "react";
-import { Sidebar } from "./Sidebar";
+import { ReactNode, useState } from "react";
 import { Header } from "./Header";
 import { Sidebar } from "./Sidebar";
-import { useState } from "react";
 
 interface DashboardLayoutProps {
   children: ReactNode;
   userType: "ecole" | "enseignant" | "eleve" | "parent";
-  userName?: string;
-  userAvatar?: string;
 }
 
-export function DashboardLayout({
-  children,
-  userType,
-  userName = "Utilisateur",
-  userAvatar,
-}: DashboardLayoutProps) {
+export function DashboardLayout({ children, userType }: DashboardLayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header userName={userName} userAvatar={userAvatar} />
+      <Header userType={userType} onMenuClick={() => setSidebarOpen(true)} />
       <div className="flex">
-        <Sidebar userType={userType} />
-        <main className="flex-1 p-6 lg:p-8">{children}</main>
+        <Sidebar
+          userType={userType}
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+        />
+        <main className="flex-1 p-6 lg:ml-0 w-full">{children}</main>
       </div>
     </div>
   );

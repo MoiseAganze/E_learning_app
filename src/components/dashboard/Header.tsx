@@ -1,21 +1,23 @@
-import { Bell, Search, LogOut } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Search, Bell, Settings, User, ChevronDown, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuTrigger,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useAuth } from "@/hooks/useAuth";
+import { authService } from "@/services/authService";
+import { motion } from "framer-motion";
 
 interface HeaderProps {
   userType: "ecole" | "enseignant" | "eleve" | "parent";
   onMenuClick?: () => void;
-}
 }
 
 export function Header({ userType, onMenuClick }: HeaderProps) {
@@ -46,7 +48,18 @@ export function Header({ userType, onMenuClick }: HeaderProps) {
             Dashboard {userType.charAt(0).toUpperCase() + userType.slice(1)}
           </h1>
         </div>
-        <div className="flex items-center space-x-4">
+
+        <div className="flex items-center space-x-2 lg:space-x-4">
+          <div className="relative hidden sm:block">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+            <Input placeholder="Rechercher..." className="pl-10 w-48 lg:w-64" />
+          </div>
+
+          {/* Mobile Search Button */}
+          <Button variant="ghost" size="sm" className="sm:hidden p-2 h-8 w-8">
+            <Search className="h-4 w-4" />
+          </Button>
+
           <Button variant="ghost" size="icon" className="relative">
             <Bell className="w-5 h-5" />
             <Badge className="absolute -top-1 -right-1 w-5 h-5 p-0 flex items-center justify-center text-xs">
@@ -58,32 +71,49 @@ export function Header({ userType, onMenuClick }: HeaderProps) {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="ghost"
-                className="flex items-center space-x-2 p-2"
+                className="flex items-center space-x-2 p-2 h-auto"
               >
                 <Avatar className="w-8 h-8">
-                  <AvatarImage src={userAvatar} alt={userName} />
-                  <AvatarFallback>
-                    {userName
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")
-                      .toUpperCase()}
+                  <AvatarFallback className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm">
+                    {user.firstName.charAt(0)}
+                    {user.lastName.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
-                <span className="hidden md:block text-sm font-medium">
-                  {userName}
-                </span>
+                <div className="hidden sm:block text-left">
+                  <p className="text-sm font-medium">
+                    {user.firstName} {user.lastName}
+                  </p>
+                  <p className="text-xs text-gray-500 capitalize">
+                    {user.type}
+                  </p>
+                </div>
+                <ChevronDown className="w-4 h-4 hidden sm:block" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuLabel>Mon compte</DropdownMenuLabel>
+              <DropdownMenuLabel>
+                <div className="flex flex-col space-y-1">
+                  <p className="text-sm font-medium">
+                    {user.firstName} {user.lastName}
+                  </p>
+                  <p className="text-xs text-gray-500">{user.email}</p>
+                </div>
+              </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Profil</DropdownMenuItem>
-              <DropdownMenuItem>Paramètres</DropdownMenuItem>
-              <DropdownMenuItem>Aide</DropdownMenuItem>
+              <DropdownMenuItem>
+                <User className="w-4 h-4 mr-2" />
+                Profil
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Settings className="w-4 h-4 mr-2" />
+                Paramètres
+              </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="text-red-600">
-                <LogOut className="w-4 h-4 mr-2" />
+              <DropdownMenuItem
+                onClick={handleLogout}
+                className="text-red-600 cursor-pointer"
+              >
+                <Settings className="w-4 h-4 mr-2" />
                 Déconnexion
               </DropdownMenuItem>
             </DropdownMenuContent>
