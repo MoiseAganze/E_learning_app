@@ -1,0 +1,35 @@
+# Dépendances
+node_modules
+
+# Cache de développement
+.vite
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers de développement
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests
+coverage
+
+# Documentation de développement
+*.md
+!README.md
+
+# Configuration locale
+.eslintcache
