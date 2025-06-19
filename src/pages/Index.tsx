@@ -126,7 +126,7 @@ const Index = () => {
               </motion.div>
 
               <motion.h1
-                className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -139,7 +139,7 @@ const Index = () => {
                   Transformons l'éducation en
                 </motion.span>
                 <motion.span
-                  className="text-primary block lg:inline"
+                  className="text-primary block sm:inline"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
@@ -161,7 +161,7 @@ const Index = () => {
               </motion.p>
 
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -173,9 +173,12 @@ const Index = () => {
                   <Link to="/connexion">
                     <Button
                       size="lg"
-                      className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-shadow"
+                      className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-shadow px-6 sm:px-8"
                     >
-                      Commencer maintenant
+                      <span className="hidden sm:inline">
+                        Commencer maintenant
+                      </span>
+                      <span className="sm:hidden">Commencer</span>
                       <motion.div
                         className="ml-2"
                         animate={{ x: [0, 5, 0] }}
