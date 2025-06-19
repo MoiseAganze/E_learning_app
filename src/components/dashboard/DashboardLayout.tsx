@@ -19,7 +19,9 @@ export function DashboardLayout({ children, userType }: DashboardLayoutProps) {
           isOpen={sidebarOpen}
           onClose={() => setSidebarOpen(false)}
         />
-        <main className="flex-1 p-6 lg:ml-0 w-full">{children}</main>
+        <main className="flex-1 p-4 sm:p-6 lg:ml-0 w-full overflow-x-hidden">
+          {children}
+        </main>
       </div>
     </div>
   );

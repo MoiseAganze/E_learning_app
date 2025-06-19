@@ -99,13 +99,19 @@ export default function EcoleDashboard() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
               <Button className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
                 <UserPlus className="w-4 h-4 mr-2" />
                 Ajouter un utilisateur
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
               <Button variant="outline" className="w-full sm:w-auto">
                 <MessageSquare className="w-4 h-4 mr-2" />
                 Nouvelle communication
@@ -165,9 +171,7 @@ export default function EcoleDashboard() {
                       transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                       whileHover={{ rotate: 10, scale: 1.1 }}
                     >
-                      <stat.icon
-                        className={`w-5 h-5 lg:w-6 lg:h-6 ${stat.color}`}
-                      />
+                      <stat.icon className={`w-5 h-5 lg:w-6 lg:h-6 ${stat.color}`} />
                     </motion.div>
                   </div>
                 </CardContent>
@@ -178,24 +182,24 @@ export default function EcoleDashboard() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Activités récentes */}
-          <Card className="lg:col-span-2">
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <BarChart3 className="w-5 h-5 mr-2" />
-                Activités récentes
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {recentActivities.map((activity, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
-                  >
-                    <div>
-                      <p className="font-medium text-gray-900">
-                        {activity.action}
-                      </p>
+            <Card className="relative overflow-hidden hover:shadow-lg transition-all duration-300">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-center justify-between">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs sm:text-sm font-medium text-gray-600 truncate">{stat.title}</p>
+                    <div className="flex items-center space-x-2 mt-2">
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{stat.value}</h3>
+                      <Badge variant="secondary" className="text-xs shrink-0">
+                        {stat.change}
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className={`p-2 sm:p-3 rounded-lg ${stat.bgColor} shrink-0`}>
+                    <stat.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${stat.color}`} />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
                       <p className="text-sm text-gray-600">{activity.user}</p>
                     </div>
                     <div className="text-right">

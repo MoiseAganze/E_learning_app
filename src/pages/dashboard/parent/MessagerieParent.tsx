@@ -351,13 +351,15 @@ export default function MessagerieParent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[600px]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 h-[500px] sm:h-[600px]">
             {/* Liste des conversations */}
             <Card className="lg:col-span-1">
-              <CardHeader className="pb-3">
+              <CardHeader className="pb-3 px-4 sm:px-6">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-lg">Conversations</CardTitle>
-                  <Button variant="ghost" size="icon">
+                  <CardTitle className="text-base sm:text-lg">
+                    Conversations
+                  </CardTitle>
+                  <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
                     <Filter className="w-4 h-4" />
                   </Button>
                 </div>
@@ -371,23 +373,23 @@ export default function MessagerieParent() {
                   />
                 </div>
               </CardHeader>
-              <ScrollArea className="h-[480px]">
-                <div className="space-y-2 p-4">
+              <ScrollArea className="h-[380px] sm:h-[480px]">
+                <div className="space-y-2 p-3 sm:p-4">
                   {conversationsData.map((conversation) => (
                     <motion.div
                       key={conversation.id}
-                      className={`p-3 rounded-lg cursor-pointer transition-all ${
+                      className={`p-2 sm:p-3 rounded-lg cursor-pointer transition-all ${
                         selectedConversation === conversation.id
                           ? "bg-blue-50 border-l-4 border-blue-500"
                           : "hover:bg-gray-50"
                       }`}
                       onClick={() => setSelectedConversation(conversation.id)}
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <div className="flex items-start space-x-3">
-                        <Avatar className="w-10 h-10">
-                          <AvatarFallback>
+                      <div className="flex items-start space-x-2 sm:space-x-3">
+                        <Avatar className="w-8 h-8 sm:w-10 sm:h-10 shrink-0">
+                          <AvatarFallback className="text-xs">
                             {conversation.destinataire
                               .split(" ")
                               .map((n) => n[0])
@@ -396,25 +398,25 @@ export default function MessagerieParent() {
                         </Avatar>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between">
-                            <p className="font-medium text-gray-900 truncate">
+                            <p className="font-medium text-gray-900 truncate text-sm sm:text-base">
                               {conversation.destinataire}
                             </p>
                             {conversation.nonLu && (
-                              <div className="w-2 h-2 bg-blue-600 rounded-full" />
+                              <div className="w-2 h-2 bg-blue-600 rounded-full shrink-0" />
                             )}
                           </div>
-                          <p className="text-xs text-gray-500 mb-1">
+                          <p className="text-xs text-gray-500 mb-1 truncate">
                             {conversation.role} • {conversation.enfant}
                           </p>
-                          <p className="text-sm text-gray-600 truncate">
+                          <p className="text-xs sm:text-sm text-gray-600 truncate">
                             {conversation.dernierMessage}
                           </p>
                           <div className="flex items-center justify-between mt-2">
-                            <p className="text-xs text-gray-400">
+                            <p className="text-xs text-gray-400 truncate">
                               {formatTime(conversation.dateMessage)}
                             </p>
                             <Badge
-                              className={`text-xs ${getStatutColor(conversation.statut)}`}
+                              className={`text-xs ${getStatutColor(conversation.statut)} shrink-0`}
                             >
                               {conversation.statut}
                             </Badge>

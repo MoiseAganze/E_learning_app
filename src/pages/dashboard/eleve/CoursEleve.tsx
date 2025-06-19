@@ -147,54 +147,60 @@ export default function CoursEleve() {
 
         {/* Stats rapides */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <Card>
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-600">
+                <div className="min-w-0">
+                  <p className="text-xs sm:text-sm font-medium text-gray-600 truncate">
                     Cours en cours
                   </p>
-                  <p className="text-2xl font-bold text-gray-900">4</p>
+                  <p className="text-xl sm:text-2xl font-bold text-gray-900">
+                    4
+                  </p>
                 </div>
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <BookOpen className="w-6 h-6 text-blue-600" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
+                  <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-600">
+                <div className="min-w-0">
+                  <p className="text-xs sm:text-sm font-medium text-gray-600 truncate">
                     Progression moyenne
                   </p>
-                  <p className="text-2xl font-bold text-gray-900">65%</p>
+                  <p className="text-xl sm:text-2xl font-bold text-gray-900">
+                    65%
+                  </p>
                 </div>
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                  <CheckCircle className="w-6 h-6 text-green-600" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
+                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-600">
+                <div className="min-w-0">
+                  <p className="text-xs sm:text-sm font-medium text-gray-600 truncate">
                     Temps d'étude
                   </p>
-                  <p className="text-2xl font-bold text-gray-900">8h 45min</p>
+                  <p className="text-xl sm:text-2xl font-bold text-gray-900">
+                    8h 45min
+                  </p>
                 </div>
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-purple-600" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-lg flex items-center justify-center shrink-0">
+                  <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
                 </div>
               </div>
             </CardContent>
@@ -211,7 +217,7 @@ export default function CoursEleve() {
             Vos cours actifs
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 lg:gap-6">
             {coursData.map((cours, index) => (
               <motion.div
                 key={cours.id}
@@ -240,19 +246,19 @@ export default function CoursEleve() {
                     </div>
                   </div>
 
-                  <CardContent className="p-6">
+                  <CardContent className="p-4 sm:p-6">
                     <div className="space-y-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-900 line-clamp-2">
                           {cours.title}
                         </h3>
                         <div className="flex items-center gap-2 mt-2">
-                          <Avatar className="w-6 h-6">
+                          <Avatar className="w-5 h-5 sm:w-6 sm:h-6">
                             <AvatarFallback className="text-xs">
                               {cours.teacher.split(" ")[1]?.charAt(0)}
                             </AvatarFallback>
                           </Avatar>
-                          <span className="text-sm text-gray-600">
+                          <span className="text-xs sm:text-sm text-gray-600 truncate">
                             {cours.teacher}
                           </span>
                         </div>
@@ -284,14 +290,22 @@ export default function CoursEleve() {
                       </div>
 
                       <div className="flex gap-2">
-                        <Button className="flex-1">
+                        <Button className="flex-1 text-sm h-9">
                           <PlayCircle className="w-4 h-4 mr-2" />
                           Continuer
                         </Button>
-                        <Button variant="outline" size="icon">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="h-9 w-9 p-0"
+                        >
                           <Eye className="w-4 h-4" />
                         </Button>
-                        <Button variant="outline" size="icon">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="h-9 w-9 p-0"
+                        >
                           <Download className="w-4 h-4" />
                         </Button>
                       </div>

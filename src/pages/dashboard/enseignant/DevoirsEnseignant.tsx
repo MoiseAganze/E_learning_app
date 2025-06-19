@@ -361,14 +361,16 @@ export default function DevoirsEnseignant() {
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
                   <Card>
-                    <CardContent className="p-6">
+                    <CardContent className="p-4 sm:p-6">
                       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                        <div className="space-y-2">
-                          <div className="flex items-center gap-3">
-                            <h3 className="text-lg font-semibold text-gray-900">
+                        <div className="space-y-2 min-w-0 flex-1">
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                            <h3 className="text-base sm:text-lg font-semibold text-gray-900 line-clamp-2">
                               {devoir.title}
                             </h3>
-                            <Badge className={getStatusColor(devoir.statut)}>
+                            <Badge
+                              className={`${getStatusColor(devoir.statut)} shrink-0 self-start sm:self-center`}
+                            >
                               {devoir.statut}
                             </Badge>
                           </div>
@@ -404,26 +406,38 @@ export default function DevoirsEnseignant() {
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-2">
-                          <Button variant="outline" size="sm">
-                            <Eye className="w-4 h-4 mr-2" />
-                            Voir
+                        <div className="flex flex-wrap items-center gap-2 lg:shrink-0">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-xs sm:text-sm"
+                          >
+                            <Eye className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                            <span className="hidden sm:inline">Voir</span>
                           </Button>
-                          <Button variant="outline" size="sm">
-                            <Edit className="w-4 h-4 mr-2" />
-                            Modifier
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-xs sm:text-sm"
+                          >
+                            <Edit className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                            <span className="hidden sm:inline">Modifier</span>
                           </Button>
-                          <Button variant="outline" size="sm">
-                            <Download className="w-4 h-4 mr-2" />
-                            Export
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="text-xs sm:text-sm"
+                          >
+                            <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                            <span className="hidden sm:inline">Export</span>
                           </Button>
                           {devoir.statut === "brouillon" && (
                             <Button
                               variant="outline"
                               size="sm"
-                              className="text-red-600"
+                              className="text-red-600 p-2"
                             >
-                              <Trash2 className="w-4 h-4" />
+                              <Trash2 className="w-3 h-3 sm:w-4 sm:h-4" />
                             </Button>
                           )}
                         </div>
