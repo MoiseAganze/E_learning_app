@@ -28,13 +28,22 @@ export default defineConfig(({ mode }) => ({
     // Évite les erreurs de process dans le navigateur
     global: "globalThis",
   },
-  // Configuration build pour assurer les bons MIME types
+  // Configuration build pour assurer les bons MIME types et Vercel
   build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    sourcemap: false,
+    minify: "esbuild",
     rollupOptions: {
       output: {
-        entryFileNames: "assets/[name].[hash].js",
-        chunkFileNames: "assets/[name].[hash].js",
-        assetFileNames: "assets/[name].[hash].[ext]",
+        entryFileNames: "assets/[name]-[hash].js",
+        chunkFileNames: "assets/[name]-[hash].js",
+        assetFileNames: "assets/[name]-[hash].[ext]",
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          router: ["react-router-dom"],
+          ui: ["@radix-ui/react-accordion", "@radix-ui/react-dialog"],
+        },
       },
     },
   },
