@@ -29,7 +29,7 @@ interface Quiz {
   title: string;
   subject: string;
   level: string;
-  duration: number; // en minutes
+  duration: number;
   questionCount: number;
   difficulty: "facile" | "moyen" | "difficile";
   xpReward: number;
@@ -77,16 +77,6 @@ export default function QuizGamifie() {
     loadData();
   }, []);
 
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
-    if (isQuizActive && timeLeft > 0) {
-      timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
-    } else if (timeLeft === 0 && isQuizActive) {
-      handleNextQuestion();
-    }
-    return () => clearTimeout(timer);
-  }, [timeLeft, isQuizActive]);
-
   const loadData = async () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -97,7 +87,7 @@ export default function QuizGamifie() {
         subject: "Mathématiques",
         level: "6ème",
         duration: 15,
-        questionCount: 10,
+        questionCount: 2,
         difficulty: "facile",
         xpReward: 100,
         badgeReward: "fraction_master",
@@ -116,8 +106,7 @@ export default function QuizGamifie() {
             question: "Comment additionne-t-on 1/3 + 1/6 ?",
             options: ["2/9", "1/2", "2/6", "1/9"],
             correctAnswer: 1,
-            explanation:
-              "1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2 (après réduction)",
+            explanation: "1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2",
             points: 15,
           },
         ],
@@ -133,19 +122,6 @@ export default function QuizGamifie() {
         xpReward: 150,
         isCompleted: true,
         bestScore: 85,
-        questions: [],
-      },
-      {
-        id: "quiz_003",
-        title: "Équations du premier degré",
-        subject: "Mathématiques",
-        level: "4ème",
-        duration: 25,
-        questionCount: 12,
-        difficulty: "difficile",
-        xpReward: 200,
-        badgeReward: "equation_solver",
-        isCompleted: false,
         questions: [],
       },
     ];
@@ -176,22 +152,6 @@ export default function QuizGamifie() {
         color: "bg-yellow-100 text-yellow-800",
         isUnlocked: true,
         unlockedAt: "2024-03-05T14:30:00Z",
-      },
-      {
-        id: "perfect_score",
-        name: "Score Parfait",
-        description: "Obtenir 100% à un quiz",
-        icon: "🏆",
-        color: "bg-purple-100 text-purple-800",
-        isUnlocked: false,
-      },
-      {
-        id: "mathematics_expert",
-        name: "Expert Maths",
-        description: "Terminer 10 quiz de mathématiques",
-        icon: "👨‍🎓",
-        color: "bg-indigo-100 text-indigo-800",
-        isUnlocked: false,
       },
     ];
 
@@ -229,7 +189,6 @@ export default function QuizGamifie() {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswer(null);
     } else {
-      // Quiz terminé
       finishQuiz(newScore);
     }
   };
@@ -242,7 +201,6 @@ export default function QuizGamifie() {
     const newXp = xp + currentQuiz!.xpReward;
     setXp(newXp);
 
-    // Vérifier les badges
     if (percentage >= 80 && currentQuiz!.badgeReward) {
       unlockBadge(currentQuiz!.badgeReward);
     }
@@ -308,12 +266,12 @@ export default function QuizGamifie() {
 
   if (isQuizActive && currentQuiz) {
     const currentQuestion = currentQuiz.questions[currentQuestionIndex];
-    const progress = ((currentQuestionIndex + 1) / currentQuiz.questions.length) * 100;
+    const progress =
+      ((currentQuestionIndex + 1) / currentQuiz.questions.length) * 100;
 
     return (
       <DashboardLayout userType="eleve">
         <div className="max-w-4xl mx-auto space-y-6">
-          {/* En-tête du quiz */}
           <motion.div
             className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-xl"
             initial={{ opacity: 0, y: 20 }}
@@ -347,7 +305,6 @@ export default function QuizGamifie() {
             </div>
           </motion.div>
 
-          {/* Question */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentQuestionIndex}
@@ -431,9 +388,7 @@ export default function QuizGamifie() {
                 <Trophy className="w-16 h-16 mx-auto text-yellow-500 mb-4" />
               </motion.div>
               <h1 className="text-3xl font-bold mb-2">Quiz terminé !</h1>
-              <p className="text-xl text-gray-600 mb-6">
-                {currentQuiz.title}
-              </p>
+              <p className="text-xl text-gray-600 mb-6">{currentQuiz.title}</p>
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="text-center">
                   <p className="text-2xl font-bold text-blue-600">
@@ -456,7 +411,10 @@ export default function QuizGamifie() {
                 <Button onClick={() => setShowResults(false)}>
                   Retour aux quiz
                 </Button>
-                <Button variant="outline" onClick={() => startQuiz(currentQuiz)}>
+                <Button
+                  variant="outline"
+                  onClick={() => startQuiz(currentQuiz)}
+                >
                   <RotateCcw className="w-4 h-4 mr-2" />
                   Refaire
                 </Button>
@@ -471,7 +429,6 @@ export default function QuizGamifie() {
   return (
     <DashboardLayout userType="eleve">
       <div className="space-y-6">
-        {/* En-tête */}
         <motion.div
           className="flex flex-col lg:flex-row lg:items-center justify-between gap-4"
           initial={{ opacity: 0, y: 20 }}
@@ -505,7 +462,6 @@ export default function QuizGamifie() {
           </div>
         </motion.div>
 
-        {/* Badges débloqués */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -540,7 +496,6 @@ export default function QuizGamifie() {
           </Card>
         </motion.div>
 
-        {/* Liste des quiz */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           initial={{ opacity: 0, y: 20 }}
@@ -616,7 +571,7 @@ export default function QuizGamifie() {
               </Card>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </DashboardLayout>
   );
