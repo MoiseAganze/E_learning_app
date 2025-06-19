@@ -273,7 +273,7 @@ const Login = () => {
                     onClick={() =>
                       handleDemoLogin(
                         "École",
-                        "admin@ecolelumiere.edu",
+                        "admin@ecolelumiere.cd",
                         "admin123",
                       )
                     }
@@ -289,7 +289,7 @@ const Login = () => {
                     onClick={() =>
                       handleDemoLogin(
                         "Enseignant",
-                        "marie.diallo@ecolelumiere.edu",
+                        "grace.mukendi@ecolelumiere.cd",
                         "teacher123",
                       )
                     }
@@ -305,7 +305,7 @@ const Login = () => {
                     onClick={() =>
                       handleDemoLogin(
                         "Élève",
-                        "aya.traore@student.ecolelumiere.edu",
+                        "divine.kabila@student.ecolelumiere.cd",
                         "student123",
                       )
                     }
@@ -321,7 +321,7 @@ const Login = () => {
                     onClick={() =>
                       handleDemoLogin(
                         "Parent",
-                        "jean.traore@parent.ecolelumiere.edu",
+                        "joseph.kabila@parent.ecolelumiere.cd",
                         "parent123",
                       )
                     }
