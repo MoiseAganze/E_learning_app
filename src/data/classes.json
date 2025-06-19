@@ -2,54 +2,68 @@
   "classes": [
     {
       "id": "6eme_a",
-      "name": "6ème A",
+      "name": "6ème A - Cycle d'Orientation",
       "level": "6ème",
       "section": "A",
+      "cycle": "Cycle d'Orientation",
       "schoolId": "school_001",
       "mainTeacherId": "teacher_001",
-      "maxStudents": 30,
-      "currentStudents": 28,
+      "maxStudents": 35,
+      "currentStudents": 32,
       "subjects": [
         "mathematics",
         "french",
         "english",
-        "sciences",
-        "history",
-        "geography"
+        "sciences_naturelles",
+        "histoire_geographie",
+        "education_civique",
+        "lingala"
       ],
       "schedule": {
-        "monday": [
+        "lundi": [
           {
-            "time": "08:00-09:00",
+            "time": "07:30-08:20",
             "subject": "mathematics",
-            "teacher": "teacher_001"
+            "teacher": "teacher_001",
+            "classroom": "Salle 101"
           },
           {
-            "time": "09:00-10:00",
+            "time": "08:20-09:10",
             "subject": "french",
-            "teacher": "teacher_003"
+            "teacher": "teacher_003",
+            "classroom": "Salle 105"
           },
           {
-            "time": "10:30-11:30",
-            "subject": "english",
-            "teacher": "teacher_004"
+            "time": "09:30-10:20",
+            "subject": "lingala",
+            "teacher": "teacher_005",
+            "classroom": "Salle 102"
+          },
+          {
+            "time": "10:20-11:10",
+            "subject": "sciences_naturelles",
+            "teacher": "teacher_002",
+            "classroom": "Labo Sciences"
           }
         ],
-        "tuesday": [
+        "mardi": [
           {
-            "time": "08:00-09:00",
-            "subject": "sciences",
-            "teacher": "teacher_005"
+            "time": "07:30-08:20",
+            "subject": "english",
+            "teacher": "teacher_004",
+            "classroom": "Salle 103"
           },
           {
-            "time": "09:00-10:00",
-            "subject": "history",
-            "teacher": "teacher_002"
+            "time": "08:20-09:10",
+            "subject": "histoire_geographie",
+            "teacher": "teacher_004",
+            "classroom": "Salle 106"
           },
           {
-            "time": "10:30-11:30",
-            "subject": "geography",
-            "teacher": "teacher_002"
+            "time": "09:30-10:20",
+            "subject": "education_civique",
+            "teacher": "teacher_004",
+            "classroom": "Salle 106"
           }
         ]
       },
@@ -57,72 +71,156 @@
     },
     {
       "id": "5eme_b",
-      "name": "5ème B",
+      "name": "5ème B - Cycle d'Orientation",
       "level": "5ème",
       "section": "B",
+      "cycle": "Cycle d'Orientation",
       "schoolId": "school_001",
       "mainTeacherId": "teacher_001",
-      "maxStudents": 32,
-      "currentStudents": 31,
+      "maxStudents": 38,
+      "currentStudents": 35,
       "subjects": [
         "mathematics",
         "french",
         "english",
-        "sciences",
-        "history",
-        "geography"
+        "sciences_naturelles",
+        "histoire_geographie",
+        "education_civique",
+        "swahili"
       ],
       "createdAt": "2024-01-15T10:15:00Z"
     },
     {
       "id": "4eme_c",
-      "name": "4ème C",
+      "name": "4ème C - Cycle d'Orientation",
       "level": "4ème",
       "section": "C",
+      "cycle": "Cycle d'Orientation",
       "schoolId": "school_001",
       "mainTeacherId": "teacher_001",
-      "maxStudents": 28,
-      "currentStudents": 26,
+      "maxStudents": 35,
+      "currentStudents": 33,
       "subjects": [
         "mathematics",
         "french",
         "english",
-        "sciences",
-        "history",
-        "geography"
+        "sciences_naturelles",
+        "histoire_geographie",
+        "education_civique",
+        "lingala"
       ],
       "createdAt": "2024-01-15T10:30:00Z"
     },
     {
       "id": "3eme_b",
-      "name": "3ème B",
+      "name": "3ème B - Cycle Terminal",
       "level": "3ème",
       "section": "B",
+      "cycle": "Cycle Terminal",
       "schoolId": "school_001",
-      "mainTeacherId": "teacher_002",
-      "maxStudents": 32,
-      "currentStudents": 31,
+      "mainTeacherId": "teacher_004",
+      "maxStudents": 40,
+      "currentStudents": 37,
       "subjects": [
         "mathematics",
         "french",
         "english",
-        "sciences",
-        "history",
-        "geography"
+        "sciences_naturelles",
+        "histoire_geographie",
+        "education_civique",
+        "swahili"
       ],
       "createdAt": "2024-01-15T10:45:00Z"
     },
     {
-      "id": "terminale_c",
-      "name": "Terminale C",
-      "level": "Terminale",
-      "section": "C",
+      "id": "seconde_a",
+      "name": "2ème Secondaire A - Sciences",
+      "level": "2ème Secondaire",
+      "section": "A",
+      "cycle": "Cycle Terminal",
+      "orientation": "Sciences",
       "schoolId": "school_001",
-      "mainTeacherId": "teacher_006",
-      "maxStudents": 25,
-      "currentStudents": 24,
-      "subjects": ["mathematics", "physics", "chemistry", "french", "english"],
+      "mainTeacherId": "teacher_002",
+      "maxStudents": 32,
+      "currentStudents": 29,
+      "subjects": [
+        "mathematics",
+        "physics",
+        "chemistry",
+        "french",
+        "english",
+        "biologie",
+        "histoire_geographie"
+      ],
       "createdAt": "2024-01-15T11:00:00Z"
+    },
+    {
+      "id": "premiere_a",
+      "name": "1ère Secondaire A - Sciences",
+      "level": "1ère Secondaire",
+      "section": "A",
+      "cycle": "Cycle Terminal",
+      "orientation": "Sciences",
+      "schoolId": "school_001",
+      "mainTeacherId": "teacher_002",
+      "maxStudents": 30,
+      "currentStudents": 28,
+      "subjects": [
+        "mathematics",
+        "physics",
+        "chemistry",
+        "french",
+        "english",
+        "biologie",
+        "histoire_geographie"
+      ],
+      "createdAt": "2024-01-15T11:15:00Z"
+    },
+    {
+      "id": "terminale_c",
+      "name": "Rhétorique C - Sciences Mathématiques",
+      "level": "Rhétorique",
+      "section": "C",
+      "cycle": "Cycle Terminal",
+      "orientation": "Sciences Mathématiques",
+      "schoolId": "school_001",
+      "mainTeacherId": "teacher_002",
+      "maxStudents": 28,
+      "currentStudents": 25,
+      "subjects": [
+        "mathematics_avancees",
+        "physics",
+        "chemistry",
+        "french",
+        "english",
+        "biologie",
+        "informatique"
+      ],
+      "examenOfficial": "Examen d'État (Diplôme d'État)",
+      "createdAt": "2024-01-15T11:30:00Z"
+    },
+    {
+      "id": "terminale_a",
+      "name": "Rhétorique A - Littéraires",
+      "level": "Rhétorique",
+      "section": "A",
+      "cycle": "Cycle Terminal",
+      "orientation": "Littéraires",
+      "schoolId": "school_001",
+      "mainTeacherId": "teacher_003",
+      "maxStudents": 32,
+      "currentStudents": 30,
+      "subjects": [
+        "french",
+        "english",
+        "histoire_geographie",
+        "philosophie",
+        "mathematics",
+        "sciences_naturelles",
+        "latin"
+      ],
+      "examenOfficial": "Examen d'État (Diplôme d'État)",
+      "createdAt": "2024-01-15T11:45:00Z"
     }
   ]
 }
