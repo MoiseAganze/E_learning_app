@@ -23,6 +23,8 @@ import CoursEleve from "./pages/dashboard/eleve/CoursEleve";
 import DevoirsEnseignant from "./pages/dashboard/enseignant/DevoirsEnseignant";
 import MessagerieParent from "./pages/dashboard/parent/MessagerieParent";
 import QuizGamifie from "./pages/dashboard/eleve/QuizGamifie";
+import Parametres from "./pages/dashboard/Parametres";
+import EmploiTempsEleve from "./pages/dashboard/eleve/EmploiTempsEleve";
 
 const queryClient = new QueryClient();
 
@@ -73,11 +75,33 @@ const App = () => (
           <Route path="/dashboard/eleve" element={<EleveDashboard />} />
           <Route path="/dashboard/eleve/cours" element={<CoursEleve />} />
           <Route path="/dashboard/eleve/quiz" element={<QuizGamifie />} />
+          <Route
+            path="/dashboard/eleve/emploi-temps"
+            element={<EmploiTempsEleve />}
+          />
 
           <Route path="/dashboard/parent" element={<ParentDashboard />} />
           <Route
             path="/dashboard/parent/communication"
             element={<MessagerieParent />}
+          />
+
+          {/* Routes Paramètres pour tous les types d'utilisateurs */}
+          <Route
+            path="/dashboard/ecole/parametres"
+            element={<Parametres userType="ecole" />}
+          />
+          <Route
+            path="/dashboard/enseignant/parametres"
+            element={<Parametres userType="enseignant" />}
+          />
+          <Route
+            path="/dashboard/eleve/parametres"
+            element={<Parametres userType="eleve" />}
+          />
+          <Route
+            path="/dashboard/parent/parametres"
+            element={<Parametres userType="parent" />}
           />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

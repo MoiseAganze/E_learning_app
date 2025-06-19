@@ -105,6 +105,10 @@
       "dest": "/"
     },
     {
+      "src": "/dashboard/eleve/emploi-temps",
+      "dest": "/"
+    },
+    {
       "src": "/dashboard/eleve/notifications",
       "dest": "/"
     },
