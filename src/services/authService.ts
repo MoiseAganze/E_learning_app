@@ -1,5 +1,6 @@
 import usersData from "@/data/users.json";
 import schoolsData from "@/data/schools.json";
+import { tokenService } from "./tokenService";
 
 export interface User {
   id: string;
@@ -38,7 +39,11 @@ class AuthService {
   async login(
     email: string,
     password: string,
-  ): Promise<{ user: User; school: School | null }> {
+  ): Promise<{
+    user: User;
+    school: School | null;
+    tokens: { accessToken: string; refreshToken: string };
+  }> {
     // Simuler un délai de réseau
     await new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -51,13 +56,29 @@ class AuthService {
 
     const school = this.schools.find((s) => s.id === user.schoolId);
 
-    // Sauvegarder dans localStorage
+    // Générer les tokens
+    const accessToken = tokenService.generateToken({
+      userId: user.id,
+      email: user.email,
+      type: user.type,
+      schoolId: user.schoolId,
+    });
+    const refreshToken = tokenService.generateRefreshToken(user.id);
+
+    // Sauvegarder les tokens
+    tokenService.saveTokens(accessToken, refreshToken);
+
+    // Sauvegarder dans localStorage (backup)
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(user));
     if (school) {
       localStorage.setItem(this.SCHOOL_STORAGE_KEY, JSON.stringify(school));
     }
 
-    return { user, school };
+    return {
+      user,
+      school,
+      tokens: { accessToken, refreshToken },
+    };
   }
 
   async registerSchoolAdmin(userData: {
@@ -135,10 +156,35 @@ class AuthService {
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(newUser));
     localStorage.setItem(this.SCHOOL_STORAGE_KEY, JSON.stringify(newSchool));
 
-    return { user: newUser, school: newSchool };
+    // Générer les tokens pour le nouvel utilisateur
+    const accessToken = tokenService.generateToken({
+      userId: newUser.id,
+      email: newUser.email,
+      type: newUser.type,
+      schoolId: newUser.schoolId,
+    });
+    const refreshToken = tokenService.generateRefreshToken(newUser.id);
+
+    // Sauvegarder les tokens
+    tokenService.saveTokens(accessToken, refreshToken);
+
+    return {
+      user: newUser,
+      school: newSchool,
+      tokens: { accessToken, refreshToken },
+    };
   }
 
   getCurrentUser(): User | null {
+    // Priorité aux tokens
+    const tokenUser = tokenService.getCurrentUserFromToken();
+    if (tokenUser) {
+      // Récupérer les détails complets depuis les données
+      const fullUser = this.users.find((u) => u.id === tokenUser.userId);
+      return fullUser || null;
+    }
+
+    // Fallback localStorage
     const userData = localStorage.getItem(this.STORAGE_KEY);
     return userData ? JSON.parse(userData) : null;
   }
@@ -149,10 +195,11 @@ class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return this.getCurrentUser() !== null;
+    return tokenService.isAuthenticated();
   }
 
   logout(): void {
+    tokenService.removeTokens();
     localStorage.removeItem(this.STORAGE_KEY);
     localStorage.removeItem(this.SCHOOL_STORAGE_KEY);
   }
