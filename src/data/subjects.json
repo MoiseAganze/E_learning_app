@@ -6,53 +6,86 @@
       "code": "MATH",
       "coefficient": 4,
       "color": "#3B82F6",
-      "description": "Algèbre, géométrie, arithmétique",
-      "levels": ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
+      "description": "Algèbre, géométrie, arithmétique selon le programme EPST-RDC",
+      "levels": [
+        "6ème",
+        "5ème",
+        "4ème",
+        "3ème",
+        "2ème Sec",
+        "1ère Sec",
+        "Rhétorique"
+      ]
+    },
+    {
+      "id": "mathematics_avancees",
+      "name": "Mathématiques Avancées",
+      "code": "MATH-A",
+      "coefficient": 5,
+      "color": "#1E40AF",
+      "description": "Analyse, géométrie analytique, probabilités pour section sciences",
+      "levels": ["Rhétorique"]
     },
     {
       "id": "french",
       "name": "Français",
       "code": "FR",
-      "coefficient": 3,
+      "coefficient": 4,
       "color": "#10B981",
-      "description": "Littérature, grammaire, expression écrite et orale",
-      "levels": ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
+      "description": "Littérature française et africaine, grammaire, expression écrite et orale",
+      "levels": [
+        "6ème",
+        "5ème",
+        "4ème",
+        "3ème",
+        "2ème Sec",
+        "1ère Sec",
+        "Rhétorique"
+      ]
     },
     {
       "id": "english",
       "name": "Anglais",
-      "code": "ENG",
+      "code": "ANG",
       "coefficient": 2,
       "color": "#8B5CF6",
-      "description": "Langue vivante 1",
-      "levels": ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
+      "description": "Langue anglaise - première langue étrangère",
+      "levels": [
+        "6ème",
+        "5ème",
+        "4ème",
+        "3ème",
+        "2ème Sec",
+        "1ère Sec",
+        "Rhétorique"
+      ]
     },
     {
-      "id": "sciences",
-      "name": "Sciences Physiques",
-      "code": "SCI",
+      "id": "lingala",
+      "name": "Lingala",
+      "code": "LNG",
+      "coefficient": 2,
+      "color": "#059669",
+      "description": "Langue nationale congolaise",
+      "levels": ["6ème", "5ème", "4ème", "3ème", "2ème Sec", "1ère Sec"]
+    },
+    {
+      "id": "swahili",
+      "name": "Swahili",
+      "code": "SWA",
+      "coefficient": 2,
+      "color": "#0D9488",
+      "description": "Langue nationale congolaise",
+      "levels": ["6ème", "5ème", "4ème", "3ème", "2ème Sec", "1ère Sec"]
+    },
+    {
+      "id": "sciences_naturelles",
+      "name": "Sciences Naturelles",
+      "code": "SN",
       "coefficient": 3,
       "color": "#F59E0B",
-      "description": "Physique et chimie",
-      "levels": ["4ème", "3ème", "2nd", "1ère", "Terminale"]
-    },
-    {
-      "id": "history",
-      "name": "Histoire",
-      "code": "HIST",
-      "coefficient": 2,
-      "color": "#EF4444",
-      "description": "Histoire générale et de l'Afrique",
-      "levels": ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
-    },
-    {
-      "id": "geography",
-      "name": "Géographie",
-      "code": "GEO",
-      "coefficient": 2,
-      "color": "#06B6D4",
-      "description": "Géographie physique et humaine",
-      "levels": ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
+      "description": "Biologie, géologie, sciences de l'environnement",
+      "levels": ["6ème", "5ème", "4ème", "3ème", "2ème Sec", "1ère Sec"]
     },
     {
       "id": "physics",
@@ -60,17 +93,104 @@
       "code": "PHY",
       "coefficient": 4,
       "color": "#7C3AED",
-      "description": "Mécanique, électricité, optique",
-      "levels": ["1ère", "Terminale"]
+      "description": "Mécanique, électricité, optique, thermodynamique",
+      "levels": ["2ème Sec", "1ère Sec", "Rhétorique"]
     },
     {
       "id": "chemistry",
       "name": "Chimie",
-      "code": "CHEM",
+      "code": "CHI",
       "coefficient": 3,
       "color": "#DC2626",
-      "description": "Chimie générale et organique",
-      "levels": ["1ère", "Terminale"]
+      "description": "Chimie générale, organique et minérale",
+      "levels": ["2ème Sec", "1ère Sec", "Rhétorique"]
+    },
+    {
+      "id": "biologie",
+      "name": "Biologie",
+      "code": "BIO",
+      "coefficient": 3,
+      "color": "#16A34A",
+      "description": "Biologie humaine, botanique, zoologie",
+      "levels": ["2ème Sec", "1ère Sec", "Rhétorique"]
+    },
+    {
+      "id": "histoire_geographie",
+      "name": "Histoire-Géographie",
+      "code": "HG",
+      "coefficient": 3,
+      "color": "#EF4444",
+      "description": "Histoire du Congo et de l'Afrique, géographie physique et humaine",
+      "levels": [
+        "6ème",
+        "5ème",
+        "4ème",
+        "3ème",
+        "2ème Sec",
+        "1ère Sec",
+        "Rhétorique"
+      ]
+    },
+    {
+      "id": "education_civique",
+      "name": "Éducation Civique et Morale",
+      "code": "ECM",
+      "coefficient": 2,
+      "color": "#0EA5E9",
+      "description": "Civisme, droits humains, morale, constitution de la RDC",
+      "levels": [
+        "6ème",
+        "5ème",
+        "4ème",
+        "3ème",
+        "2ème Sec",
+        "1ère Sec",
+        "Rhétorique"
+      ]
+    },
+    {
+      "id": "philosophie",
+      "name": "Philosophie",
+      "code": "PHIL",
+      "coefficient": 3,
+      "color": "#7C2D12",
+      "description": "Philosophie générale, logique, éthique",
+      "levels": ["Rhétorique"]
+    },
+    {
+      "id": "latin",
+      "name": "Latin",
+      "code": "LAT",
+      "coefficient": 2,
+      "color": "#92400E",
+      "description": "Langue et civilisation latines",
+      "levels": ["2ème Sec", "1ère Sec", "Rhétorique"]
+    },
+    {
+      "id": "informatique",
+      "name": "Informatique",
+      "code": "INFO",
+      "coefficient": 2,
+      "color": "#6366F1",
+      "description": "Initiation à l'informatique, bureautique, programmation de base",
+      "levels": ["3ème", "2ème Sec", "1ère Sec", "Rhétorique"]
+    },
+    {
+      "id": "education_physique",
+      "name": "Éducation Physique",
+      "code": "EP",
+      "coefficient": 1,
+      "color": "#F97316",
+      "description": "Sport, athlétisme, gymnastique",
+      "levels": [
+        "6ème",
+        "5ème",
+        "4ème",
+        "3ème",
+        "2ème Sec",
+        "1ère Sec",
+        "Rhétorique"
+      ]
     }
   ]
 }
