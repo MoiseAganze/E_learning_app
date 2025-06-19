@@ -24,6 +24,7 @@ import {
   Calendar,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { DynamicNavigation } from "@/components/DynamicNavigation";
 
 const Index = () => {
   return (
@@ -86,17 +87,7 @@ const Index = () => {
                   {link.text}
                 </motion.a>
               ))}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.7 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link to="/connexion">
-                  <Button>Se connecter</Button>
-                </Link>
-              </motion.div>
+              <DynamicNavigation />
             </motion.div>
           </div>
         </div>
