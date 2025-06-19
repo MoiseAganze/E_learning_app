@@ -7,12 +7,12 @@
       "teacherId": "teacher_001",
       "classId": "6eme_a",
       "type": "devoir",
-      "title": "Devoir sur les fractions",
-      "score": 15.5,
+      "title": "Devoir sur les nombres décimaux",
+      "score": 14.5,
       "maxScore": 20,
       "date": "2024-03-05T10:00:00Z",
       "coefficient": 1,
-      "comments": "Très bon travail, continue ainsi !"
+      "comments": "Bon travail Divine, continue à t'appliquer dans les calculs !"
     },
     {
       "id": "grade_002",
@@ -20,92 +20,232 @@
       "subjectId": "french",
       "teacherId": "teacher_003",
       "classId": "6eme_a",
-      "type": "controle",
-      "title": "Contrôle de lecture",
-      "score": 13.8,
+      "type": "composition",
+      "title": "Composition sur l'Indépendance du Congo",
+      "score": 16.5,
       "maxScore": 20,
       "date": "2024-03-04T14:00:00Z",
       "coefficient": 2,
-      "comments": "Bonne compréhension du texte"
+      "comments": "Excellente expression écrite et bonne connaissance de l'histoire congolaise"
     },
     {
       "id": "grade_003",
       "studentId": "student_001",
-      "subjectId": "sciences",
-      "teacherId": "teacher_005",
+      "subjectId": "sciences_naturelles",
+      "teacherId": "teacher_002",
       "classId": "6eme_a",
-      "type": "tp",
-      "title": "TP Optique",
-      "score": 16.2,
+      "type": "interrogation",
+      "title": "Interrogation sur les végétaux",
+      "score": 15.8,
       "maxScore": 20,
       "date": "2024-02-28T15:00:00Z",
       "coefficient": 1,
-      "comments": "Excellent travail pratique"
+      "comments": "Très bonne compréhension des sciences naturelles"
     },
     {
       "id": "grade_004",
-      "studentId": "student_002",
-      "subjectId": "history",
-      "teacherId": "teacher_002",
-      "classId": "3eme_b",
-      "type": "devoir",
-      "title": "Devoir sur la colonisation",
-      "score": 11.5,
+      "studentId": "student_001",
+      "subjectId": "lingala",
+      "teacherId": "teacher_005",
+      "classId": "6eme_a",
+      "type": "oral",
+      "title": "Expression orale en Lingala",
+      "score": 17.0,
       "maxScore": 20,
-      "date": "2024-03-06T09:00:00Z",
+      "date": "2024-03-01T11:00:00Z",
       "coefficient": 1,
-      "comments": "Effort à fournir sur les dates"
+      "comments": "Excellente maîtrise de la langue lingala, félicitations !"
     },
     {
       "id": "grade_005",
       "studentId": "student_002",
+      "subjectId": "mathematics_avancees",
+      "teacherId": "teacher_001",
+      "classId": "terminale_c",
+      "type": "examen",
+      "title": "Examen partiel - Fonctions et dérivées",
+      "score": 13.2,
+      "maxScore": 20,
+      "date": "2024-03-03T08:00:00Z",
+      "coefficient": 3,
+      "comments": "Merveille, il faut revoir les techniques de dérivation"
+    },
+    {
+      "id": "grade_006",
+      "studentId": "student_002",
+      "subjectId": "physics",
+      "teacherId": "teacher_002",
+      "classId": "terminale_c",
+      "type": "tp",
+      "title": "TP - Lois de l'électricité",
+      "score": 15.5,
+      "maxScore": 20,
+      "date": "2024-02-29T14:00:00Z",
+      "coefficient": 1,
+      "comments": "Bon travail pratique en physique"
+    },
+    {
+      "id": "grade_007",
+      "studentId": "student_002",
+      "subjectId": "chemistry",
+      "teacherId": "teacher_002",
+      "classId": "terminale_c",
+      "type": "devoir",
+      "title": "Devoir sur la chimie organique",
+      "score": 12.8,
+      "maxScore": 20,
+      "date": "2024-03-02T10:00:00Z",
+      "coefficient": 2,
+      "comments": "Les formules chimiques nécessitent plus de pratique"
+    },
+    {
+      "id": "grade_008",
+      "studentId": "student_003",
+      "subjectId": "french",
+      "teacherId": "teacher_003",
+      "classId": "premiere_a",
+      "type": "dissertation",
+      "title": "Dissertation sur la littérature congolaise moderne",
+      "score": 16.8,
+      "maxScore": 20,
+      "date": "2024-03-06T13:00:00Z",
+      "coefficient": 3,
+      "comments": "Bénédiction, excellente analyse des œuvres d'auteurs congolais"
+    },
+    {
+      "id": "grade_009",
+      "studentId": "student_003",
+      "subjectId": "histoire_geographie",
+      "teacherId": "teacher_004",
+      "classId": "premiere_a",
+      "type": "controle",
+      "title": "Contrôle sur la colonisation belge au Congo",
+      "score": 14.3,
+      "maxScore": 20,
+      "date": "2024-03-04T09:00:00Z",
+      "coefficient": 2,
+      "comments": "Bonne connaissance historique, développe davantage tes arguments"
+    },
+    {
+      "id": "grade_010",
+      "studentId": "student_003",
+      "subjectId": "philosophie",
+      "teacherId": "teacher_006",
+      "classId": "premiere_a",
+      "type": "devoir",
+      "title": "Devoir sur la philosophie africaine",
+      "score": 15.2,
+      "maxScore": 20,
+      "date": "2024-02-27T16:00:00Z",
+      "coefficient": 2,
+      "comments": "Bonne réflexion sur les penseurs africains"
+    },
+    {
+      "id": "grade_011",
+      "studentId": "student_004",
       "subjectId": "mathematics",
       "teacherId": "teacher_001",
-      "classId": "3eme_b",
-      "type": "examen",
-      "title": "Examen équations du 2nd degré",
-      "score": 14.0,
+      "classId": "seconde_a",
+      "type": "interrogation",
+      "title": "Interrogation sur les équations du premier degré",
+      "score": 13.7,
       "maxScore": 20,
-      "date": "2024-03-08T08:00:00Z",
-      "coefficient": 3,
-      "comments": "Bon niveau, quelques erreurs de calcul"
+      "date": "2024-03-05T08:00:00Z",
+      "coefficient": 1,
+      "comments": "Gloire, bon effort mais attention aux calculs"
+    },
+    {
+      "id": "grade_012",
+      "studentId": "student_004",
+      "subjectId": "biologie",
+      "teacherId": "teacher_002",
+      "classId": "seconde_a",
+      "type": "tp",
+      "title": "TP - Observation au microscope",
+      "score": 16.5,
+      "maxScore": 20,
+      "date": "2024-02-28T15:00:00Z",
+      "coefficient": 1,
+      "comments": "Excellent travail d'observation scientifique"
+    },
+    {
+      "id": "grade_013",
+      "studentId": "student_004",
+      "subjectId": "education_civique",
+      "teacherId": "teacher_004",
+      "classId": "seconde_a",
+      "type": "devoir",
+      "title": "Devoir sur la Constitution de la RDC",
+      "score": 17.2,
+      "maxScore": 20,
+      "date": "2024-03-01T11:00:00Z",
+      "coefficient": 1,
+      "comments": "Très bonne maîtrise des institutions congolaises"
     }
   ],
-  "assignments": [
+  "devoirs": [
     {
-      "id": "assign_001",
+      "id": "homework_001",
+      "title": "Exercices sur les fractions - Chapitre 4",
+      "subjectId": "mathematics",
       "teacherId": "teacher_001",
       "classId": "6eme_a",
-      "subjectId": "mathematics",
-      "title": "Exercices sur les équations",
-      "description": "Résoudre les exercices 1 à 10 page 45",
-      "dueDate": "2024-03-15T23:59:59Z",
-      "type": "homework",
+      "description": "Résoudre les exercices 1 à 15 pages 67-68 du manuel Mathématiques 6ème",
+      "dueDate": "2024-03-10T23:59:59Z",
+      "createdDate": "2024-03-05T10:00:00Z",
+      "type": "exercices",
       "maxScore": 20,
-      "status": "active",
       "submissions": [
         {
           "studentId": "student_001",
-          "submittedAt": "2024-03-14T20:30:00Z",
+          "submittedAt": "2024-03-08T18:30:00Z",
           "status": "submitted",
-          "grade": null
+          "score": 16.5,
+          "comments": "Très bon travail Divine !"
         }
-      ],
-      "createdAt": "2024-03-10T10:00:00Z"
+      ]
     },
     {
-      "id": "assign_002",
-      "teacherId": "teacher_003",
-      "classId": "6eme_a",
-      "subjectId": "french",
-      "title": "Dissertation sur Molière",
-      "description": "Rédiger une dissertation de 300 mots sur une pièce de Molière",
-      "dueDate": "2024-03-20T23:59:59Z",
-      "type": "essay",
+      "id": "homework_002",
+      "title": "Recherche sur l'histoire de Kinshasa",
+      "subjectId": "histoire_geographie",
+      "teacherId": "teacher_004",
+      "classId": "terminale_c",
+      "description": "Rédiger un exposé de 3 pages sur l'évolution de Kinshasa de Léopoldville à nos jours",
+      "dueDate": "2024-03-15T23:59:59Z",
+      "createdDate": "2024-03-01T14:00:00Z",
+      "type": "recherche",
       "maxScore": 20,
-      "status": "active",
-      "submissions": [],
-      "createdAt": "2024-03-12T14:00:00Z"
+      "submissions": [
+        {
+          "studentId": "student_002",
+          "submittedAt": "2024-03-12T20:15:00Z",
+          "status": "submitted",
+          "score": 15.8,
+          "comments": "Bonne recherche Merveille, sources bien documentées"
+        }
+      ]
+    },
+    {
+      "id": "homework_003",
+      "title": "Commentaire de texte - Sony Labou Tansi",
+      "subjectId": "french",
+      "teacherId": "teacher_003",
+      "classId": "premiere_a",
+      "description": "Commenter l'extrait de 'La Vie et demie' de Sony Labou Tansi (texte distribué en classe)",
+      "dueDate": "2024-03-18T23:59:59Z",
+      "createdDate": "2024-03-06T13:00:00Z",
+      "type": "commentaire",
+      "maxScore": 20,
+      "submissions": [
+        {
+          "studentId": "student_003",
+          "submittedAt": "2024-03-15T19:45:00Z",
+          "status": "submitted",
+          "score": 17.5,
+          "comments": "Excellent commentaire Bénédiction, analyse très fine de l'œuvre"
+        }
+      ]
     }
   ]
 }
