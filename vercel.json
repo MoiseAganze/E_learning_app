@@ -105,10 +105,6 @@
       "dest": "/"
     },
     {
-      "src": "/dashboard/eleve/emploi-temps",
-      "dest": "/"
-    },
-    {
       "src": "/dashboard/eleve/notifications",
       "dest": "/"
     },
@@ -155,12 +151,6 @@
     {
       "src": "/(.*)",
       "dest": "/"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
     }
   ]
 }
