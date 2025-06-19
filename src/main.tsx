@@ -6,4 +6,7 @@ import "./index.css";
 // Initialiser le gestionnaire d'erreurs global
 import "./lib/errorHandler";
 
+// Diagnostics de développement
+import "./utils/diagnostics";
+
 createRoot(document.getElementById("root")!).render(<App />);
