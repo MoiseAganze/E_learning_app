@@ -210,27 +210,29 @@ export default function EmploisTemps() {
       <div className="space-y-6">
         {/* En-tête */}
         <motion.div
-          className="flex items-center justify-between"
+          className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">
+          <div className="min-w-0">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
               Emplois du temps
             </h1>
-            <p className="text-gray-600 mt-1">
+            <p className="text-sm sm:text-base text-gray-600 mt-1">
               Gérez et organisez les plannings de toutes les classes
             </p>
           </div>
-          <div className="flex space-x-3">
-            <Button className="bg-blue-600 hover:bg-blue-700">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 shrink-0">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-sm h-9">
               <Plus className="w-4 h-4 mr-2" />
-              Nouveau cours
+              <span className="hidden sm:inline">Nouveau cours</span>
+              <span className="sm:hidden">Nouveau</span>
             </Button>
-            <Button variant="outline">
+            <Button variant="outline" className="text-sm h-9">
               <Download className="w-4 h-4 mr-2" />
-              Exporter PDF
+              <span className="hidden sm:inline">Exporter PDF</span>
+              <span className="sm:hidden">Export</span>
             </Button>
           </div>
         </motion.div>
