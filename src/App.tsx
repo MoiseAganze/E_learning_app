@@ -18,6 +18,7 @@ import Abonnements from "./pages/dashboard/ecole/Abonnements";
 import Resultats from "./pages/dashboard/ecole/Resultats";
 import EmploisTemps from "./pages/dashboard/ecole/EmploisTemps";
 import Communications from "./pages/dashboard/ecole/Communications";
+import Bibliotheque from "./pages/dashboard/enseignant/Bibliotheque";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +56,10 @@ const App = () => (
           <Route
             path="/dashboard/enseignant"
             element={<EnseignantDashboard />}
+          />
+          <Route
+            path="/dashboard/enseignant/bibliotheque"
+            element={<Bibliotheque />}
           />
           <Route path="/dashboard/eleve" element={<EleveDashboard />} />
           <Route path="/dashboard/parent" element={<ParentDashboard />} />

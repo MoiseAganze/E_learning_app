@@ -68,6 +68,11 @@ const menuItems = {
     },
     { icon: Award, label: "Notation", href: "/dashboard/enseignant/notation" },
     {
+      icon: School,
+      label: "Bibliothèque",
+      href: "/dashboard/enseignant/bibliotheque",
+    },
+    {
       icon: BarChart3,
       label: "Progression",
       href: "/dashboard/enseignant/progression",
