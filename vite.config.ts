@@ -13,15 +13,33 @@ export default defineConfig(({ mode }) => ({
     watch: {
       usePolling: true, // Améliore la détection des changements de fichiers
     },
+    // Configuration MIME types explicite
+    middlewareMode: false,
+    cors: true,
   },
   plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
   },
   define: {
     // Évite les erreurs de process dans le navigateur
     global: "globalThis",
+  },
+  // Configuration build pour assurer les bons MIME types
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: "assets/[name].[hash].js",
+        chunkFileNames: "assets/[name].[hash].js",
+        assetFileNames: "assets/[name].[hash].[ext]",
+      },
+    },
+  },
+  // Assure que les modules ES sont servis correctement
+  esbuild: {
+    logOverride: { "this-is-undefined-in-esm": "silent" },
   },
 }));
