@@ -1,0 +1,162 @@
+{
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/"
+    },
+    {
+      "src": "/connexion",
+      "dest": "/"
+    },
+    {
+      "src": "/inscription-admin",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/ecole",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/ecole/utilisateurs",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/ecole/abonnements",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/ecole/resultats",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/ecole/emplois-temps",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/ecole/communications",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/ecole/classes",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/ecole/parametres",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/enseignant",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/enseignant/cours",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/enseignant/devoirs",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/enseignant/notation",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/enseignant/bibliotheque",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/enseignant/progression",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/enseignant/emploi-temps",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/enseignant/messagerie",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/enseignant/parametres",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/eleve",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/eleve/cours",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/eleve/emploi-temps",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/eleve/devoirs",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/eleve/notes",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/eleve/quiz",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/eleve/notifications",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/eleve/messagerie",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/eleve/parametres",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/parent",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/parent/enfants",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/parent/notes",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/parent/presences",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/parent/calendrier",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/parent/communication",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/parent/notifications",
+      "dest": "/"
+    },
+    {
+      "src": "/dashboard/parent/parametres",
+      "dest": "/"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

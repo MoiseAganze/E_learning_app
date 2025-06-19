@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { DynamicNavigation } from "@/components/DynamicNavigation";
+import { BottomNavigation } from "@/components/BottomNavigation";
 
 const Index = () => {
   return (
@@ -677,34 +678,7 @@ const Index = () => {
       </footer>
 
       {/* Bottom Navigation for Mobile */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 z-50">
-        <div className="flex items-center justify-around">
-          <a
-            href="#"
-            className="flex flex-col items-center py-2 px-3 text-gray-600"
-          >
-            <GraduationCap className="w-5 h-5" />
-            <span className="text-xs mt-1">Accueil</span>
-          </a>
-          <a
-            href="#fonctionnalites"
-            className="flex flex-col items-center py-2 px-3 text-gray-600"
-          >
-            <BookOpen className="w-5 h-5" />
-            <span className="text-xs mt-1">Fonctions</span>
-          </a>
-          <a
-            href="#apropos"
-            className="flex flex-col items-center py-2 px-3 text-gray-600"
-          >
-            <Users className="w-5 h-5" />
-            <span className="text-xs mt-1">À propos</span>
-          </a>
-          <div className="flex flex-col items-center py-2 px-3">
-            <DynamicNavigation />
-          </div>
-        </div>
-      </div>
+      <BottomNavigation />
     </div>
   );
 };

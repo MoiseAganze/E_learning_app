@@ -13,28 +13,39 @@ import {
 import { Badge } from "@/components/ui/badge";
 
 interface HeaderProps {
-  userName: string;
-  userAvatar?: string;
+  userType: "ecole" | "enseignant" | "eleve" | "parent";
+  onMenuClick?: () => void;
+}
 }
 
-export function Header({ userName, userAvatar }: HeaderProps) {
+export function Header({ userType, onMenuClick }: HeaderProps) {
+  const { user, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    window.location.href = "/";
+  };
+
+  if (!user) return null;
+
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4">
+    <header className="bg-white border-b border-gray-200 px-4 lg:px-6 py-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">EA</span>
-            </div>
-            <span className="font-semibold text-gray-900">EduAfrique</span>
-          </div>
+          {/* Mobile Menu Button */}
+          <motion.button
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            onClick={onMenuClick}
+            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            <Menu className="h-5 w-5 text-gray-600" />
+          </motion.button>
 
-          <div className="hidden md:flex relative max-w-md">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-            <Input placeholder="Rechercher..." className="pl-10 w-80" />
-          </div>
+          <h1 className="text-lg lg:text-xl font-semibold text-gray-900">
+            Dashboard {userType.charAt(0).toUpperCase() + userType.slice(1)}
+          </h1>
         </div>
-
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="icon" className="relative">
             <Bell className="w-5 h-5" />
