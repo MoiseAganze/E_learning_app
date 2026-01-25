@@ -66,7 +66,7 @@ const NotFound = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Cette page fait partie de nos prochaines fonctionnalités. L'équipe
-              Klaso travaille activement pour vous l'apporter bientôt !
+              technique de KCS travaille activement pour vous l'apporter bientôt !
             </motion.p>
 
             {/* URL demandée */}
@@ -135,7 +135,7 @@ const NotFound = () => {
                 <span>Merci de votre patience !</span>
               </div>
               <p className="text-xs text-blue-600 mt-1">
-                Nous construisons l'avenir de l'éducation en Afrique
+                Kinshasa Christian School - Excellence & Innovation
               </p>
             </motion.div>
           </CardContent>

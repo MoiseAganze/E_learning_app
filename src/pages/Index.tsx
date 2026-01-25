@@ -40,7 +40,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <motion.div
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-3"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -49,10 +49,18 @@ const Index = () => {
               <motion.div
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                className="bg-gradient-to-br from-blue-600 to-purple-600 p-2 rounded-lg"
               >
-                <GraduationCap className="h-8 w-8 text-primary" />
+                <GraduationCap className="h-6 w-6 text-white" />
               </motion.div>
-              <span className="text-xl font-bold text-gray-900">Klaso</span>
+              <div className="flex flex-col">
+                <span className="text-lg font-bold text-gray-900 leading-tight">
+                  KCS
+                </span>
+                <span className="text-xs text-primary font-medium">
+                  Plateforme de Gestion Éducative
+                </span>
+              </div>
             </motion.div>
 
             {/* Menu mobile amélioré */}
@@ -107,19 +115,19 @@ const Index = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <Badge className="mb-6 bg-primary/10 text-primary hover:bg-primary/20 inline-block">
+                <Badge className="mb-6 bg-gradient-to-r from-blue-600/10 to-purple-600/10 text-white hover:bg-primary/20 inline-block border border-primary/20">
                   <motion.span
-                    animate={{ rotate: [0, 10, -10, 0] }}
+                    animate={{ scale: [1, 1.2, 1] }}
                     transition={{
                       duration: 2,
                       repeat: Infinity,
-                      repeatDelay: 4,
+                      repeatDelay: 3,
                     }}
                     className="inline-block mr-2"
                   >
-                    🌍
+                    ✨
                   </motion.span>
-                  Éducation pour l'Afrique francophone
+                  Excellence Éducative Chrétienne
                 </Badge>
               </motion.div>
 
@@ -134,16 +142,15 @@ const Index = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  Transformons l'éducation en
+                  Gestion Moderne et
                 </motion.span>
                 <motion.span
-                  className="text-primary block sm:inline"
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 block"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
-                  {" "}
-                  Afrique
+                  Centralisée
                 </motion.span>
               </motion.h1>
 
@@ -153,9 +160,9 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Une plateforme e-learning complète, intelligente et accessible
-                qui révolutionne l'apprentissage pour les établissements,
-                enseignants, élèves et parents.
+                La plateforme de gestion éducative complète de Kinshasa Christian School.
+                Une solution moderne qui centralise tous les aspects de notre institution :
+                administration, enseignement, suivi des élèves et communication avec les parents.
               </motion.p>
 
               <motion.div
@@ -196,8 +203,9 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 1 }}
               >
                 {[
-                  { icon: CheckCircle, text: "Gratuit pour démarrer" },
-                  { icon: CheckCircle, text: "Support 24/7" },
+                  { icon: CheckCircle, text: "100% Sécurisé" },
+                  { icon: CheckCircle, text: "Support Dédié" },
+                  { icon: CheckCircle, text: "Accès 24/7" },
                 ].map((item, index) => (
                   <motion.div
                     key={item.text}
@@ -227,26 +235,26 @@ const Index = () => {
                   {[
                     {
                       icon: Users,
-                      number: "10,000+",
-                      label: "Élèves actifs",
+                      number: "2,500+",
+                      label: "Élèves",
                       delay: 0.1,
                     },
                     {
                       icon: BookOpen,
-                      number: "500+",
-                      label: "Cours disponibles",
+                      number: "180+",
+                      label: "Enseignants",
                       delay: 0.2,
                     },
                     {
                       icon: GraduationCap,
-                      number: "150+",
-                      label: "Écoles partenaires",
+                      number: "95+",
+                      label: "Classes actives",
                       delay: 0.3,
                     },
                     {
                       icon: Heart,
-                      number: "98%",
-                      label: "Satisfaction",
+                      number: "100%",
+                      label: "Numérique",
                       delay: 0.4,
                     },
                   ].map((stat, index) => (
@@ -326,11 +334,11 @@ const Index = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Une plateforme adaptée à tous
+              Nos Avantages
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Découvrez des fonctionnalités pensées pour répondre aux besoins
-              spécifiques de chaque acteur de l'écosystème éducatif africain.
+              Découvrez comment notre plateforme transforme la gestion de Kinshasa Christian School
+              en offrant des outils modernes et efficaces pour chaque membre de notre communauté.
             </p>
           </motion.div>
 
@@ -338,26 +346,26 @@ const Index = () => {
             {[
               {
                 icon: GraduationCap,
-                title: "Pour les Écoles",
-                description: "Gestion complète de l'établissement",
+                title: "Administration",
+                description: "Gestion centralisée de l'établissement",
                 color: "blue",
               },
               {
                 icon: Users,
-                title: "Pour les Enseignants",
-                description: "Outils pédagogiques modernes",
+                title: "Enseignants",
+                description: "Outils pédagogiques performants",
                 color: "green",
               },
               {
                 icon: BookOpen,
-                title: "Pour les Élèves",
-                description: "Apprentissage interactif et gamifié",
+                title: "Élèves",
+                description: "Apprentissage interactif moderne",
                 color: "purple",
               },
               {
                 icon: Heart,
-                title: "Pour les Parents",
-                description: "Suivi en temps réel des enfants",
+                title: "Parents",
+                description: "Suivi en temps réel",
                 color: "orange",
               },
             ].map((feature, index) => (
@@ -404,22 +412,22 @@ const Index = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Conçu pour l'Afrique, par l'Afrique
+                Notre Vision : Excellence & Innovation
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Klaso comprend les défis uniques de l'éducation en Afrique
-                francophone. Notre plateforme s'adapte aux réalités locales tout
-                en offrant une technologie de pointe.
+                Kinshasa Christian School s'engage à offrir une éducation de qualité supérieure
+                en combinant nos valeurs chrétiennes avec les technologies les plus modernes.
+                Cette plateforme centralise tous nos processus pour une gestion efficace et transparente.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {[
                   {
                     icon: Globe,
-                    text: "Multilingue (Français + langues locales)",
+                    text: "Gestion centralisée complète",
                   },
-                  { icon: Smartphone, text: "Optimisé mobile-first" },
-                  { icon: Monitor, text: "Fonctionne hors ligne" },
-                  { icon: Brain, text: "IA éducative adaptée" },
+                  { icon: Smartphone, text: "Accessible partout, tout le temps" },
+                  { icon: Monitor, text: "Interface intuitive et moderne" },
+                  { icon: Brain, text: "Suivi intelligent des performances" },
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="flex-shrink-0">
@@ -444,28 +452,28 @@ const Index = () => {
                   {
                     icon: MessageCircle,
                     title: "Communication",
-                    description: "Messagerie intégrée pour tous les acteurs",
+                    description: "Messagerie intégrée pour toute la communauté KCS",
                     gradient: "from-blue-500 to-blue-600",
                     delay: 0.1,
                   },
                   {
                     icon: FileText,
-                    title: "Contenus",
-                    description: "Bibliothèque de ressources éducatives",
+                    title: "Ressources",
+                    description: "Bibliothèque complète de contenus pédagogiques",
                     gradient: "from-green-500 to-green-600",
                     delay: 0.2,
                   },
                   {
                     icon: Calendar,
                     title: "Planning",
-                    description: "Gestion intelligente des emplois du temps",
+                    description: "Emplois du temps et calendrier scolaire",
                     gradient: "from-purple-500 to-purple-600",
                     delay: 0.3,
                   },
                   {
                     icon: Brain,
-                    title: "IA éducative",
-                    description: "Assistant intelligent pour l'apprentissage",
+                    title: "Analyses",
+                    description: "Tableaux de bord et statistiques en temps réel",
                     gradient: "from-orange-500 to-orange-600",
                     delay: 0.4,
                   },
@@ -511,8 +519,14 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary to-accent text-white">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white relative overflow-hidden">
+        {/* Éléments décoratifs */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -520,30 +534,22 @@ const Index = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Rejoignez la révolution éducative africaine
+              Rejoignez l'Excellence de KCS
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Commencez dès maintenant et transformez l'expérience éducative
-              dans votre établissement.
+              Connectez-vous dès maintenant pour accéder à tous les outils de gestion
+              et d'apprentissage de Kinshasa Christian School.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/connexion">
                 <Button
                   size="lg"
-                  className="bg-white text-primary hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all"
+                  className="bg-white text-blue-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all font-semibold"
                 >
-                  C'est parti
+                  Se connecter
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 hover:border-white"
-                style={{ color: "rgba(29, 114, 128, 1)" }}
-              >
-                Contactez-nous
-              </Button>
             </div>
           </motion.div>
         </div>
@@ -555,15 +561,24 @@ const Index = () => {
         className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <GraduationCap className="h-8 w-8 text-primary" />
-                <span className="text-xl font-bold">Klaso</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="space-y-4 md:col-span-1">
+              <div className="flex items-center space-x-3">
+                <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-2 rounded-lg">
+                  <GraduationCap className="h-6 w-6 text-white" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-base font-bold leading-tight">
+                    KINSHASA CHRISTIAN SCHOOL
+                  </span>
+                  <span className="text-xs text-gray-400">
+                    Excellence Éducative
+                  </span>
+                </div>
               </div>
-              <p className="text-gray-400">
-                Transformons l'éducation en Afrique avec une plateforme moderne
-                et accessible.
+              <p className="text-gray-400 text-sm">
+                Former les leaders de demain avec des valeurs chrétiennes
+                et une éducation moderne de qualité supérieure.
               </p>
               <div className="flex space-x-4">
                 <a
@@ -616,48 +631,22 @@ const Index = () => {
               <ul className="space-y-2 text-gray-400">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Pour les écoles
+                    Administration
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Pour les enseignants
+                    Enseignants
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Pour les élèves
+                    Élèves
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
-                    Pour les parents
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Centre d'aide
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Formation
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Documentation
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Contactez-nous
+                    Parents
                   </a>
                 </li>
               </ul>
@@ -666,17 +655,22 @@ const Index = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <div className="space-y-2 text-gray-400">
-                <p>📧 aganzedev@gmail.com</p>
-                <p>📞 +243 99 23 35 768</p>
-                <p>📍 Kinshasa, RDC</p>
+                <p>📧 contact@kcs.cd</p>
+                <p>📞 +243 81 234 5678</p>
+                <p>📍 Kinshasa, RD Congo</p>
+                <p className="mt-4 text-sm">
+                  Lundi - Vendredi: 7h30 - 16h00
+                </p>
               </div>
             </div>
           </div>
 
           <div className="border-t border-gray-800 pt-8 pb-20 sm:pb-5 text-center text-gray-400">
             <p>
-              &copy; 2024 Klaso. Tous droits réservés. Fait avec ❤️ pour
-              l'Afrique.
+              &copy; 2024 Kinshasa Christian School. Tous droits réservés.
+            </p>
+            <p className="mt-2 text-sm">
+              Excellence • Innovation • Valeurs Chrétiennes
             </p>
           </div>
         </div>

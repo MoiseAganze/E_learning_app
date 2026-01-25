@@ -120,34 +120,27 @@ const Login = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <motion.div
-              className="px-4 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
-              whileHover={{ scale: 1.05, rotate: 5 }}
+              className="px-6 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
+              whileHover={{ scale: 1.05, rotate: 2 }}
               whileTap={{ scale: 0.95 }}
             >
+              <GraduationCap className="h-6 w-6 text-white mr-2" />
               <motion.span
-                className="text-white font-bold text-2xl"
-                animate={{ rotateY: [0, 360] }}
+                className="text-white font-bold text-xl"
+                animate={{ opacity: [1, 0.8, 1] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
               >
-                KLASO
+                KINSHASA CHRISTIAN SCHOOL
               </motion.span>
             </motion.div>
           </motion.div>
-          {/* <motion.h1
-            className="text-3xl font-bold text-gray-900"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Klaso
-          </motion.h1> */}
           <motion.p
             className="text-gray-600 mt-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            Connectez-vous à votre espace
+            Accédez à votre espace personnel
           </motion.p>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -156,13 +149,13 @@ const Login = () => {
           >
             <Badge className="mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
               <motion.span
-                animate={{ rotate: [0, 10, -10, 0] }}
+                animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}
                 className="inline-block mr-2"
               >
-                🌍
+                ✨
               </motion.span>
-              Éducation pour l'Afrique francophone
+              Excellence Éducative Chrétienne
             </Badge>
           </motion.div>
         </motion.div>
@@ -186,7 +179,7 @@ const Login = () => {
               {/* Comptes de démonstration */}
               <div className="space-y-3">
                 <p className="text-sm font-medium text-center text-gray-700">
-                  Comptes de démonstration
+                  Comptes de démonstration KCS
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Button
@@ -194,8 +187,8 @@ const Login = () => {
                     size="sm"
                     onClick={() =>
                       handleDemoLogin(
-                        "École",
-                        "admin@ecolelumiere.cd",
+                        "Administration",
+                        "admin@kcs.cd",
                         "admin123",
                       )
                     }
@@ -203,7 +196,7 @@ const Login = () => {
                     className="text-xs"
                   >
                     <School className="w-3 h-3 mr-1" />
-                    École
+                    Admin
                   </Button>
                   <Button
                     variant="outline"
@@ -211,7 +204,7 @@ const Login = () => {
                     onClick={() =>
                       handleDemoLogin(
                         "Enseignant",
-                        "grace.mukendi@ecolelumiere.cd",
+                        "enseignant@kcs.cd",
                         "teacher123",
                       )
                     }
@@ -227,7 +220,7 @@ const Login = () => {
                     onClick={() =>
                       handleDemoLogin(
                         "Élève",
-                        "divine.kabila@student.ecolelumiere.cd",
+                        "eleve@kcs.cd",
                         "student123",
                       )
                     }
@@ -243,7 +236,7 @@ const Login = () => {
                     onClick={() =>
                       handleDemoLogin(
                         "Parent",
-                        "joseph.kabila@parent.ecolelumiere.cd",
+                        "parent@kcs.cd",
                         "parent123",
                       )
                     }
@@ -341,12 +334,12 @@ const Login = () => {
                 </div>
                 <div className="text-center">
                   <p className="text-sm text-gray-600">
-                    Première utilisation ?{" "}
+                    Nouveau personnel ou parent ?{" "}
                     <Link
                       to="/inscription-admin"
                       className="text-primary hover:underline"
                     >
-                      Inscrire votre école
+                      Contactez l'administration
                     </Link>
                   </p>
                 </div>

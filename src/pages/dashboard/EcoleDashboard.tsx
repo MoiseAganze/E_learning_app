@@ -17,32 +17,32 @@ import {
 const stats = [
   {
     title: "Total Élèves",
-    value: "1,247",
-    change: "+12%",
+    value: "2,500",
+    change: "+8%",
     icon: GraduationCap,
     color: "text-blue-600",
     bgColor: "bg-blue-100",
   },
   {
     title: "Enseignants",
-    value: "89",
-    change: "+3%",
+    value: "180",
+    change: "+5%",
     icon: Users,
     color: "text-green-600",
     bgColor: "bg-green-100",
   },
   {
     title: "Classes Actives",
-    value: "42",
-    change: "+2",
+    value: "95",
+    change: "+3",
     icon: BookOpen,
     color: "text-purple-600",
     bgColor: "bg-purple-100",
   },
   {
     title: "Taux de Présence",
-    value: "94.2%",
-    change: "+1.5%",
+    value: "96.5%",
+    change: "+2.1%",
     icon: TrendingUp,
     color: "text-orange-600",
     bgColor: "bg-orange-100",
@@ -52,19 +52,19 @@ const stats = [
 const recentActivities = [
   {
     action: "Nouvel enseignant ajouté",
-    user: "Prof. Kouame",
+    user: "Pasteur Emmanuel Mbala",
     time: "Il y a 2h",
     type: "success",
   },
   {
     action: "Bulletin publié",
-    user: "Classe de 6ème A",
+    user: "Classe de Rhétorique Sciences",
     time: "Il y a 4h",
     type: "info",
   },
   {
-    action: "Réunion programmée",
-    user: "Parents 3ème",
+    action: "Culte matinal programmé",
+    user: "Chapelle KCS",
     time: "Il y a 1j",
     type: "warning",
   },
@@ -87,10 +87,10 @@ export default function EcoleDashboard() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
-              Tableau de bord École
+              Tableau de bord KCS
             </h1>
             <p className="text-gray-600 mt-1 text-sm sm:text-base">
-              Vue d'ensemble de votre établissement scolaire
+              Vue d'ensemble de Kinshasa Christian School
             </p>
           </motion.div>
           <motion.div

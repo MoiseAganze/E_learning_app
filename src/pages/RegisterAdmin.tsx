@@ -133,20 +133,21 @@ export default function RegisterAdmin() {
         {/* En-tête */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <div className="px-4 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">Klaso</span>
+            <div className="px-6 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+              <GraduationCap className="h-6 w-6 text-white mr-2" />
+              <span className="text-white font-bold text-xl">KINSHASA CHRISTIAN SCHOOL</span>
             </div>
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Inscrivez votre école
+            Inscription Administrateur KCS
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Créez un compte administrateur et enregistrez votre établissement
-            scolaire pour commencer à utiliser Klaso
+            Créez un compte administrateur pour Kinshasa Christian School.
+            Cette page est réservée au personnel administratif autorisé.
           </p>
           <Badge className="mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
             <Shield className="w-4 h-4 mr-2" />
-            Compte Administrateur
+            Accès Réservé - Administration KCS
           </Badge>
         </div>
 
@@ -154,7 +155,7 @@ export default function RegisterAdmin() {
           <CardHeader>
             <CardTitle className="flex items-center">
               <School className="w-6 h-6 mr-2" />
-              Inscription École + Administrateur
+              Création de Compte Administrateur
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -164,7 +165,7 @@ export default function RegisterAdmin() {
                 <div className="flex items-center mb-4">
                   <User className="w-5 h-5 mr-2 text-blue-600" />
                   <h3 className="text-lg font-semibold text-gray-900">
-                    Informations Administrateur
+                    Informations Personnelles
                   </h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -193,10 +194,11 @@ export default function RegisterAdmin() {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email *</Label>
+                    <Label htmlFor="email">Email KCS *</Label>
                     <Input
                       id="email"
                       type="email"
+                      placeholder="prenom.nom@kcs.cd"
                       value={formData.email}
                       onChange={(e) =>
                         handleInputChange("email", e.target.value)
@@ -209,7 +211,7 @@ export default function RegisterAdmin() {
                     <Input
                       id="phone"
                       type="tel"
-                      placeholder="+225 XX XX XX XX XX"
+                      placeholder="+243 XX XX XX XX XX"
                       value={formData.phone}
                       onChange={(e) =>
                         handleInputChange("phone", e.target.value)
@@ -246,184 +248,12 @@ export default function RegisterAdmin() {
                 </div>
               </div>
 
-              <Separator />
-
-              {/* Section École */}
-              <div>
-                <div className="flex items-center mb-4">
-                  <School className="w-5 h-5 mr-2 text-green-600" />
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    Informations de l'École
-                  </h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="md:col-span-2">
-                    <Label htmlFor="schoolName">Nom de l'école *</Label>
-                    <Input
-                      id="schoolName"
-                      type="text"
-                      value={formData.schoolName}
-                      onChange={(e) =>
-                        handleInputChange("schoolName", e.target.value)
-                      }
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="schoolType">Type d'établissement *</Label>
-                    <Select
-                      onValueChange={(value) =>
-                        handleInputChange("schoolType", value)
-                      }
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Choisir le type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {schoolTypes.map((type) => (
-                          <SelectItem key={type} value={type}>
-                            {type}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <Label htmlFor="foundedYear">Année de création</Label>
-                    <Input
-                      id="foundedYear"
-                      type="number"
-                      min="1900"
-                      max={new Date().getFullYear()}
-                      value={formData.foundedYear}
-                      onChange={(e) =>
-                        handleInputChange(
-                          "foundedYear",
-                          parseInt(e.target.value),
-                        )
-                      }
-                    />
-                  </div>
-                  <div className="md:col-span-2">
-                    <Label htmlFor="schoolAddress">Adresse complète *</Label>
-                    <Input
-                      id="schoolAddress"
-                      type="text"
-                      value={formData.schoolAddress}
-                      onChange={(e) =>
-                        handleInputChange("schoolAddress", e.target.value)
-                      }
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="schoolCity">Ville *</Label>
-                    <Input
-                      id="schoolCity"
-                      type="text"
-                      value={formData.schoolCity}
-                      onChange={(e) =>
-                        handleInputChange("schoolCity", e.target.value)
-                      }
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="schoolCountry">Pays *</Label>
-                    <Select
-                      onValueChange={(value) =>
-                        handleInputChange("schoolCountry", value)
-                      }
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Choisir le pays" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {countries.map((country) => (
-                          <SelectItem key={country} value={country}>
-                            {country}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <Label htmlFor="schoolPhone">Téléphone école *</Label>
-                    <Input
-                      id="schoolPhone"
-                      type="tel"
-                      value={formData.schoolPhone}
-                      onChange={(e) =>
-                        handleInputChange("schoolPhone", e.target.value)
-                      }
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="schoolEmail">Email école *</Label>
-                    <Input
-                      id="schoolEmail"
-                      type="email"
-                      value={formData.schoolEmail}
-                      onChange={(e) =>
-                        handleInputChange("schoolEmail", e.target.value)
-                      }
-                      required
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <Separator />
-
-              {/* Section Directeur */}
-              <div>
-                <div className="flex items-center mb-4">
-                  <GraduationCap className="w-5 h-5 mr-2 text-purple-600" />
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    Informations du Directeur
-                  </h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="md:col-span-2">
-                    <Label htmlFor="directorName">
-                      Nom complet du directeur *
-                    </Label>
-                    <Input
-                      id="directorName"
-                      type="text"
-                      value={formData.directorName}
-                      onChange={(e) =>
-                        handleInputChange("directorName", e.target.value)
-                      }
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="directorPhone">Téléphone directeur *</Label>
-                    <Input
-                      id="directorPhone"
-                      type="tel"
-                      value={formData.directorPhone}
-                      onChange={(e) =>
-                        handleInputChange("directorPhone", e.target.value)
-                      }
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="directorEmail">Email directeur *</Label>
-                    <Input
-                      id="directorEmail"
-                      type="email"
-                      value={formData.directorEmail}
-                      onChange={(e) =>
-                        handleInputChange("directorEmail", e.target.value)
-                      }
-                      required
-                    />
-                  </div>
-                </div>
+              {/* Note d'information */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <p className="text-sm text-blue-800">
+                  <strong>Note :</strong> Ce compte sera créé pour Kinshasa Christian School.
+                  Vous aurez accès aux fonctionnalités d'administration complètes de l'établissement.
+                </p>
               </div>
 
               {/* Boutons */}
@@ -436,12 +266,12 @@ export default function RegisterAdmin() {
                   {loading ? (
                     <>
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Inscription en cours...
+                      Création en cours...
                     </>
                   ) : (
                     <>
                       <School className="w-4 h-4 mr-2" />
-                      Créer l'école et le compte
+                      Créer le compte administrateur
                     </>
                   )}
                 </Button>
@@ -458,18 +288,13 @@ export default function RegisterAdmin() {
         {/* Informations complémentaires */}
         <div className="mt-8 text-center text-sm text-gray-600">
           <p>
-            En vous inscrivant, vous acceptez nos{" "}
-            <a href="#" className="text-blue-600 hover:underline">
-              conditions d'utilisation
-            </a>{" "}
-            et notre{" "}
-            <a href="#" className="text-blue-600 hover:underline">
-              politique de confidentialité
-            </a>
-            .
+            Cette page est réservée au personnel autorisé de Kinshasa Christian School.
           </p>
           <p className="mt-2">
-            Vous bénéficiez d'un essai gratuit de 30 jours du plan Basique.
+            Pour toute question, contactez l'administration au{" "}
+            <a href="tel:+243812345678" className="text-blue-600 hover:underline">
+              +243 81 234 5678
+            </a>
           </p>
         </div>
       </div>
