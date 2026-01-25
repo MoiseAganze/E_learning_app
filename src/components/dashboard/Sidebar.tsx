@@ -53,11 +53,11 @@ const menuItems = {
       label: "Communications",
       href: "/dashboard/ecole/communications",
     },
-    {
-      icon: CreditCard,
-      label: "Abonnements",
-      href: "/dashboard/ecole/abonnements",
-    },
+    // {
+    //   icon: CreditCard,
+    //   label: "Abonnements",
+    //   href: "/dashboard/ecole/abonnements",
+    // },
     {
       icon: Settings,
       label: "Paramètres",

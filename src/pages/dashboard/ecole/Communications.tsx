@@ -283,30 +283,30 @@ export default function Communications() {
       <div className="space-y-6">
         {/* En-tête */}
         <motion.div
-          className="flex flex-col lg:flex-row items-center justify-between"
+          className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Communications</h1>
-            <p className="text-gray-600 mt-1">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Communications</h1>
+            <p className="text-sm sm:text-base text-gray-600 mt-1">
               Envoyez des circulaires, annonces et organiser des réunions
             </p>
           </div>
           <Dialog open={showNewComm} onOpenChange={setShowNewComm}>
             <DialogTrigger asChild>
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-blue-600 hover:bg-blue-700 w-full lg:w-auto">
                 <Plus className="w-4 h-4 mr-2" />
                 Nouvelle communication
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-2xl">
+            <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto w-[95vw] sm:w-full">
               <DialogHeader>
                 <DialogTitle>Nouvelle communication</DialogTitle>
               </DialogHeader>
               <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="type">Type</Label>
                     <Select
@@ -403,7 +403,7 @@ export default function Communications() {
                   />
                 </div>
 
-                <div className="flex space-x-3 pt-4">
+                <div className="flex flex-col sm:flex-row gap-3 pt-4">
                   <Button onClick={handleSendCommunication} className="flex-1">
                     <Send className="w-4 h-4 mr-2" />
                     {newComm.scheduledFor ? "Programmer" : "Envoyer"}
@@ -423,7 +423,7 @@ export default function Communications() {
 
         {/* Statistiques */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -516,50 +516,55 @@ export default function Communications() {
                 {communications.map((comm, index) => (
                   <motion.div
                     key={comm.id}
-                    className="p-4 border rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
+                    className="p-3 sm:p-4 border rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     whileHover={{ scale: 1.01 }}
                   >
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-3 mb-2">
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-3">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
                           <div className="flex items-center space-x-2">
                             {getTypeIcon(comm.type)}
-                            <h3 className="font-medium text-gray-900">
+                            <h3 className="font-medium text-gray-900 text-sm sm:text-base truncate">
                               {comm.title}
                             </h3>
                           </div>
-                          <Badge className={getTypeColor(comm.type)}>
-                            {comm.type === "circular"
-                              ? "Circulaire"
-                              : comm.type === "announcement"
-                                ? "Annonce"
-                                : comm.type === "meeting"
-                                  ? "Réunion"
-                                  : "Alerte"}
-                          </Badge>
-                          <Badge className={getPriorityColor(comm.priority)}>
-                            {comm.priority === "urgent"
-                              ? "Urgent"
-                              : comm.priority === "high"
-                                ? "Élevé"
-                                : comm.priority === "medium"
-                                  ? "Moyen"
-                                  : "Faible"}
-                          </Badge>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <Badge className={`${getTypeColor(comm.type)} text-xs`}>
+                              {comm.type === "circular"
+                                ? "Circulaire"
+                                : comm.type === "announcement"
+                                  ? "Annonce"
+                                  : comm.type === "meeting"
+                                    ? "Réunion"
+                                    : "Alerte"}
+                            </Badge>
+                            <Badge className={`${getPriorityColor(comm.priority)} text-xs`}>
+                              {comm.priority === "urgent"
+                                ? "Urgent"
+                                : comm.priority === "high"
+                                  ? "Élevé"
+                                  : comm.priority === "medium"
+                                    ? "Moyen"
+                                    : "Faible"}
+                            </Badge>
+                          </div>
                         </div>
-                        <p className="text-gray-600 mb-3 line-clamp-2">
+                        <p className="text-gray-600 mb-3 line-clamp-2 text-sm">
                           {comm.content}
                         </p>
-                        <div className="flex items-center space-x-4 text-sm text-gray-500">
-                          <span>
-                            {new Date(comm.createdAt).toLocaleDateString()}{" "}
-                            {new Date(comm.createdAt).toLocaleTimeString()}
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-500">
+                          <span className="flex-shrink-0">
+                            {new Date(comm.createdAt).toLocaleDateString()}
+                            <span className="hidden sm:inline">
+                              {" "}{new Date(comm.createdAt).toLocaleTimeString()}
+                            </span>
                           </span>
-                          <span>
-                            Destinataires :{" "}
+                          <span className="flex-shrink-0">
+                            <span className="hidden sm:inline">Destinataires : </span>
+                            <span className="sm:hidden">🎯 </span>
                             {comm.recipientType === "all"
                               ? "Tous"
                               : comm.recipientType === "teachers"
@@ -569,22 +574,23 @@ export default function Communications() {
                                   : "Parents"}
                           </span>
                           {comm.scheduledFor && (
-                            <span>
-                              Programmé :{" "}
+                            <span className="flex-shrink-0">
+                              <span className="hidden sm:inline">Programmé : </span>
+                              <span className="sm:hidden">📅 </span>
                               {new Date(comm.scheduledFor).toLocaleDateString()}
                             </span>
                           )}
                         </div>
                       </div>
-                      <div className="flex flex-col items-end space-y-2">
-                        <Badge className={getStatusColor(comm.status)}>
+                      <div className="flex flex-row lg:flex-col items-center lg:items-end justify-between lg:justify-start gap-2">
+                        <Badge className={`${getStatusColor(comm.status)} text-xs flex-shrink-0`}>
                           {comm.status === "sent"
                             ? "Envoyé"
                             : comm.status === "scheduled"
                               ? "Programmé"
                               : "Brouillon"}
                         </Badge>
-                        <div className="flex items-center space-x-2 text-sm text-gray-500">
+                        <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-500">
                           <Users className="w-3 h-3" />
                           <span>{comm.readBy.length} lectures</span>
                         </div>

@@ -1,0 +1,80 @@
+PRESENTATION DE LA MAQUETTE
+
+1) Avant tout : c’est une maquette
+- Ce site est une MAQUETTE (un exemple, une démonstration).
+- Les informations qu’on voit dedans sont des DONNÉES DE SIMULATION.
+  Donc ce n’est pas relié à une vraie base de données.
+- Le but est de montrer comment l’application pourrait fonctionner pour une école.
+
+2) À quoi sert cette application web ?
+Cette application web va aider notre école à mieux organiser la vie scolaire sur Internet.
+Elle regroupe au même endroit plusieurs choses importantes :
+- communiquer avec les élèves et les parents
+- gérer les utilisateurs (qui a le droit de faire quoi)
+- consulter des résultats
+- voir les emplois du temps
+- accéder à des espaces différents selon le profil (école / enseignant / élève / parent)
+
+3) Les avantages pour l’école
+- Gain de temps : moins de papiers, moins d’allers‑retours.
+- Meilleure communication : les infos importantes sont plus faciles à envoyer et à retrouver.
+- Organisation : emplois du temps, résultats et messages sont centralisés.
+- Chacun a son espace : un parent ne voit pas la même chose qu’un élève ou qu’un enseignant.
+
+4) Comment le site a été construit
+- Le site a été fait en grande partie grâce à l’IA Builder.io, qui a aidé pour le design
+  
+- Le site est fait en React.
+
+5) C’est quoi React ? Et c’est quoi un “framework” ?
+- JavaScript (souvent écrit “JS”) est un langage qui sert à créer des pages web interactives
+  (boutons, formulaires, pages qui changent sans recharger, etc.).
+- React est un framework JavaScript.
+- Un framework, c’est comme une “boîte à outils + des règles d’organisation” :
+  ça aide à construire une application plus vite, de manière plus propre,
+  et à éviter de refaire les mêmes choses à chaque fois.
+
+6) Les grandes parties de l’application (ce qu’on voit dans le plan des pages)
+Dans le fichier principal de l’app (App.tsx), on voit la liste des pages (les “routes”).
+En clair, ça représente le menu des écrans possibles.
+
+6.1) Les pages générales
+- Accueil : la page principale (présentation).
+- Connexion : pour se connecter.
+- Inscription admin : pour créer un compte administrateur (selon le besoin).
+- Page “introuvable” : si on se trompe d’adresse, on tombe sur une page d’erreur.
+
+6.2) Les espaces “Dashboard” (tableau de bord) selon le type d’utilisateur
+Le site a plusieurs espaces, parce que chaque personne n’a pas les mêmes besoins :
+
+A) Espace ÉCOLE (direction / administration)
+- Tableau de bord école
+- Gestion des utilisateurs
+- Abonnements
+- Résultats
+- Emplois du temps
+- Communications (annonces, circulaires, réunions, alertes)
+- Paramètres (réglages)
+
+B) Espace ENSEIGNANT
+- Tableau de bord enseignant
+- Bibliothèque (ressources)
+- Devoirs
+- Paramètres
+
+C) Espace ÉLÈVE
+- Tableau de bord élève
+- Cours
+- Quiz (gamifié)
+- Emploi du temps
+- Paramètres
+
+D) Espace PARENT
+- Tableau de bord parent
+- Communication / messagerie
+- Paramètres
+
+7) Conclusion
+Cette maquette montre une future plateforme scolaire : chaque profil a son espace,
+et tout est regroupé pour mieux communiquer et mieux s’organiser.
+
